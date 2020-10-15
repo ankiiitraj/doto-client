@@ -30,7 +30,7 @@ const Signin = (props) => {
       <div className="signin">
         <div className="signin-about">
           Track your progress and multiply efficiency through DoTo.<br/> DoTo contains hankdpiked questions for DSA mastrey <br/> by none other than <b>Love Babbar</b>.<br/>
-          Check out the video where Love Babbar talks about these questions.<br/>
+          <br/>Check out the video where Love Babbar talks about these questions.<br/>
           <a rel='noopener noreferrer' target='_blank' href='https://www.youtube.com/watch?v=4iFALQ1ACdA'>Link</a>
         </div>
         <div className="signin-box">
