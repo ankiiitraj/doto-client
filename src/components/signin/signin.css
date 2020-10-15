@@ -1,0 +1,18 @@
+.signin{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.signin-about{
+    max-width: 700px;
+    padding: 2em;
+    font-size: x-large;
+}
+.signin-box{
+    max-width: 700px;
+    padding: 2em;
+    padding-top: 0;
+    font-size: x-large;
+}

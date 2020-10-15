@@ -1,0 +1,93 @@
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-around;
+}
+.topic{
+    min-width: 320px;
+    max-width: 500px;
+}
+.table-items{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.table-items thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.table-items th,
+.table-items td {
+    padding: 12px 15px;
+}
+.table-items tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table-items tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table-items tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+
+
+
+/*Toggler*/
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 40px;
+	height: 20px;
+	background: #f55331;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: 18px;
+	height: 18px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: #89cfbf;
+}
+
+input:checked + label:after {
+	left: calc(100% - 1px);
+	transform: translateX(-100%);
+}
+
+input:default + label {
+	background: #89cfbf;
+}
+input[type="checkbox"]:default + label:after {
+    left: calc(100% - 1px);
+	transform: translateX(-100%);
+ }
+
+label:active:after {
+	width: 13px;
+}
