@@ -1,32 +1,35 @@
 import React from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
 import './signin.css';
+import { useState } from "react";
 
 const Signin = (props) => {
   const CLIENT_ID =
     "942881642900-4difoml0e6ctcj2r0ifvq9k5v842cl9t.apps.googleusercontent.com";
-  const history = useHistory();
+  const [message, signing] = useState('');
   const handleSignIn = (response) => {
+    signing('Signing you in . . .');
     const payload = {
       email: response.profileObj.email,
       name: response.profileObj.givenName,
     };
     axios
-      .post("/api/auth", payload)
-      .then((res) => {
+    .post("/api/auth", payload)
+    .then((res) => {
+        signing('');
         window.localStorage.setItem("token", res.data.token);
         window.localStorage.setItem("email", response.profileObj.email);
         window.localStorage.setItem("name", response.profileObj.givenName);
         props.signin(true);
       })
       .catch((err) => {
-        history.push("/error");
+        signing('Something went wrong! Try reloading or open in PC');
       });
   };
   return (
     <>
+      <center><h1>{message}</h1></center>
       <div className="signin">
         <div className="signin-about">
           Track your progress and multiply efficiency through DoTo.<br/> DoTo contains handpicked problems for DSA mastrey <br/> by none other than <b>Love Babbar</b>.<br/>
