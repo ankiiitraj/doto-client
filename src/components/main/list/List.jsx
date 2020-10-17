@@ -6,9 +6,10 @@ import axios from 'axios';
 import "./list.css";
 
 const List = (props) => {
+  const {updateCounter} = props;
   const [done, update] = useState(props.done || []);
   useEffect(()=>{
-    update([...props.done])
+    update([...props.done]);
   }, [props.done])
   const updateDone = (id, checked) => {
     axios.put('/api/done', {'id': id, 'ty': (checked ? 'add' : 'del')}, {
@@ -32,6 +33,7 @@ const List = (props) => {
         NotificationManager.warning('something wrong happened! try again later 😵', 'Close after 2000ms', 2000);
       })
   }
+  updateCounter(props.done.length);
   return (
     <div className="list">
       {topics.map((elem, idx) => {

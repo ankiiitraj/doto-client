@@ -11,6 +11,7 @@ import 'react-notifications/lib/notifications.css';
 function App() {
   const [user, setUserDetail] = useState({ name: window.localStorage.getItem('name') ||"user", email: window.localStorage.getItem('email') || "N/A" });
   const [done, setDone] = useState([]);
+  const [messsage, updateMessage] = useState(`Loading Data . . . 🚶‍♂️`);
   const history = useHistory();
 
   const signin = (success) => {
@@ -32,9 +33,10 @@ function App() {
       })
       .then((result) => {
         setDone([...result.data.result.done]);
+        updateMessage('👨🏼‍💻');
       })
       .catch((err) => {
-        console.log(err);
+        updateMessage('Loading data failed, try reloading!🧍‍♂️')
       });
   }
 
@@ -50,6 +52,7 @@ function App() {
   return (
     <div className="App">
       <Nav signout={signout} user={user} />
+      <center><span style={{fontSize: 'x-large', color: (messsage === 'Loading data failed, try reloading!🧍‍♂️' ? '#f55331' : '#009879')}}>{messsage}</span></center>
       <Switch>
         <ProtectedRoute
           exact
