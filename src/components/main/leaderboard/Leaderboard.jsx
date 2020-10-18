@@ -73,6 +73,7 @@ const Leaderboard = () => {
                   ? "#f55331"
                   : "#009879",
               fontSize: "xxx-large",
+              textAlign: 'center'
             }}
           >
             {message}
