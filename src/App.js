@@ -7,6 +7,7 @@ import Nav from "./components/nav/Nav";
 import Main from "./components/main/Main";
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import 'react-notifications/lib/notifications.css';
+import Leaderboard from "./components/main/leaderboard/Leaderboard";
 
 function App() {
   const [user, setUserDetail] = useState({ name: window.localStorage.getItem('name') ||"user", email: window.localStorage.getItem('email') || "N/A" });
@@ -52,7 +53,7 @@ function App() {
   return (
     <div className="App">
       <Nav signout={signout} user={user} />
-      <center><span style={{fontSize: 'x-large', color: (messsage === 'Loading data failed, try reloading!🧍‍♂️' ? '#f55331' : '#009879')}}>{messsage}</span></center>
+      {window.location.pathname === '/' && <center><span style={{fontSize: 'x-large', color: (messsage === 'Loading data failed, try reloading!🧍‍♂️' ? '#f55331' : '#009879')}}>{messsage}</span></center>}
       <Switch>
         <ProtectedRoute
           exact
@@ -62,6 +63,7 @@ function App() {
           path="/"
           component={Main}
         />
+        <Route exact path='/leaderboard' component={Leaderboard} />
         <Route path="/" component={Error} />
       </Switch>
     </div>

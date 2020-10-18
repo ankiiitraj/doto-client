@@ -1,0 +1,12 @@
+.overflow{
+    white-space: nowrap; 
+    max-width: 400px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 600px){
+    .overflow{
+        display: none;
+    }
+}

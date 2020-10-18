@@ -24,6 +24,8 @@ const Nav = (props) => {
         </div>
       </nav>
       <hr style={{width: '100vw', height: '0px'}}/>
+      <div style={{padding: '5px', display: 'flex', justifyContent: 'center'}}><Link to='/leaderboard'>Leaderboard</Link></div>
+      <hr style={{width: '100vw', height: '0px'}}/>
     </>
   );
 };
