@@ -11,7 +11,7 @@ const Nav = (props) => {
   return (
     <>
       <nav className="nav">
-        <div className="nav-brand">DoTo</div>
+        <div className="nav-brand"><Link to='/' style={{textDecoration: 'none', color: 'black'}}>DoTo <br/><span style={{fontSize: 'large'}}>TrackProgress</span></Link></div>
         <div className="nav-items">
           <div className="nav-items">
 						<div className="dropdown">
@@ -24,7 +24,7 @@ const Nav = (props) => {
         </div>
       </nav>
       <hr style={{width: '100vw', height: '0px'}}/>
-      <div style={{padding: '5px', display: 'flex', justifyContent: 'center'}}><Link to='/leaderboard'>Leaderboard</Link></div>
+      <div style={{padding: '5px', display: 'flex', fontSize: 'x-large', justifyContent: 'center'}}><Link to='/leaderboard'>Leaderboard</Link></div>
       <hr style={{width: '100vw', height: '0px'}}/>
     </>
   );
