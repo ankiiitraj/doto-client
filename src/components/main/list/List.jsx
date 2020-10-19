@@ -8,10 +8,20 @@ import "./list.css";
 const List = (props) => {
   const {updateCounter} = props;
   const [done, update] = useState(props.done || []);
+  const [loading, updateLoading] = useState(Array(data.length).fill(0));
+  const [locked, updateLock] = useState(1);
   useEffect(()=>{
+    if(props.done.length > 0){
+      updateLock(0);
+    }
     update([...props.done]);
   }, [props.done])
+
   const updateDone = (id, checked) => {
+    updateLoading(loading.map((elem, idx) => {
+      return idx === id ? 1 : elem
+    }));
+    updateLock(1);
     axios.put('/api/done', {'id': id, 'ty': (checked ? 'add' : 'del')}, {
       headers: {
         'authorization': `Bearer ${window.localStorage.getItem("token")}`
@@ -19,21 +29,28 @@ const List = (props) => {
     })
       .then((res) => {
         if(checked && done.indexOf(id) === -1){
-          props.updateCounter(done.length +1);
-          update([...done, id])
+          updateCounter(done.length +1);
+          update([...done, id]);
         }
         else if(!checked && done.indexOf(id) !== -1){
-          props.updateCounter(done.length -1);
+          updateCounter(done.length -1);
           done.splice(done.indexOf(id), 1);
           update([...done]);
         }
+        updateLoading(loading.map((elem, idx) => {
+          return idx === id ? 0 : elem
+        }));
+        updateLock(0);
         NotificationManager.success('Status has been updated 🎉', 'Update');
       })
       .catch(err => {
-        NotificationManager.warning('something wrong happened! try again later 😵', 'Close after 2000ms', 2000);
+        updateLoading(loading.map((elem, idx) => {
+          return idx === id ? 0 : elem
+        }));
+        updateLock(0);
+        NotificationManager.warning('something wrong happened! try again later 😵', 2000);
       })
   }
-  updateCounter(props.done.length);
   return (
     <div className="list">
       {topics.map((elem, idx) => {
@@ -59,9 +76,13 @@ const List = (props) => {
                             {el.name}
                           </a>
                         </td>
-                        <td>
-                          <input checked={done.indexOf(id) === -1 ? false : true} onChange={(e)=>{updateDone(id, e.target.checked)}} type="checkbox" id={`switch${id}`} />
-                          <label htmlFor={`switch${id}`}>Toggle</label>
+                        <td style={{display: 'flex'}}>
+                          <input disabled={locked} checked={done.indexOf(id) === -1 ? false : true} onChange={(e)=>{updateDone(id, e.target.checked)}} type="checkbox" id={`switch${id}`} />
+                          <label style={{background: (locked?'#b5b0b0':'')}} htmlFor={`switch${id}`}>Toggle</label>
+                          <div className="spinner" style={{ marginLeft: '3px', display: (loading[id]===0?'none':'initial')}}>
+                            <div className="double-bounce1"></div>
+                            <div className="double-bounce2"></div>
+                          </div>
                         </td>
                       </tr>
                     )

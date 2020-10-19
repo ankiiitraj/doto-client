@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import List from "./list/List";
 
 const Main = (props) => {
   const [counter, updateCounter] = useState(0);
+  
+  useEffect(()=>{
+    updateCounter(props.done.length);
+  }, [props.done]);
+
   return (
     <>
       <center>
