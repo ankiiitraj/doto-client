@@ -5,15 +5,17 @@ import topics from "../../data/topics.json";
 import axios from 'axios';
 import "./list.css";
 
+let loaded = 0;
 const List = (props) => {
   const {updateCounter} = props;
   const [done, update] = useState(props.done || []);
   const [loading, updateLoading] = useState(Array(data.length).fill(0));
   const [locked, updateLock] = useState(1);
   useEffect(()=>{
-    if(props.done.length > 0){
+    if(loaded === 1){
       updateLock(0);
     }
+    loaded = 1;
     update([...props.done]);
   }, [props.done])
 
