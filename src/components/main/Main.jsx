@@ -11,7 +11,7 @@ const Main = (props) => {
 
   return (
     <>
-      <center>
+      <center style={{padding: "5px"}}>
         <div className="user-detail">
           <span
             style={{
