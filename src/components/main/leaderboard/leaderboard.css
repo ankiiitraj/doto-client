@@ -1,10 +1,14 @@
 .overflow{
     white-space: nowrap; 
-    max-width: 400px; 
+    max-width: 200px; 
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
+.leaderboard-wrapper{
+    min-width: 300px;
+    max-width: 700px;
+    margin: 10px auto;
+}
 @media only screen and (max-width: 600px){
     .overflow{
         display: none;

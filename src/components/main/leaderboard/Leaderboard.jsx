@@ -13,7 +13,7 @@ const Leaderboard = () => {
   const [message, updateMessage] = useState("Loading . . . 🤸🏻 🏃🏻 🚶🏻🧍🏻🧎🏻");
   useEffect(() => {
     axios
-      .get("/api/leaderboard")
+      .get(`${process.env.REACT_APP_BASE_ENDPOINT || ''}/leaderboard`)
       .then((res) => {
         updateData([...res.data.result]);
         updateLoaded(1);
@@ -27,9 +27,9 @@ const Leaderboard = () => {
 
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>Leaderboard</h1>
+      <h1 style={{ textAlign: "center", color: "#4E9948" }}>Leaderboard</h1>
       {loaded === 1 && (
-        <center>
+        <div className="leaderboard-wrapper">
           <table className="table-items" style={{minWidth: 'auto'}}>
             <thead>
               <tr>
@@ -56,7 +56,7 @@ const Leaderboard = () => {
               })}
             </tbody>
           </table>
-        </center>
+        </div>
       )}
       {!loaded && (
         <div

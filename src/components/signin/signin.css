@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    min-height: 60vh;
 }
 .signin-about{
     max-width: 700px;

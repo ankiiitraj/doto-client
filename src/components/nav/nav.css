@@ -1,10 +1,17 @@
 nav{
     display: flex;
     justify-content: space-between;
-    padding: 1em;
+    padding: .5em;
+    background-color: #ffffff;
 }
 .nav-brand{
-    font-size: xx-large;
+    font-family: 'Podkova', serif;
+    letter-spacing: 1px;
+    font-size: xxx-large;
+    transition: all .5s;
+}
+.nav-brand:hover{
+    letter-spacing: 5px;
 }
 .nav-items{
     display: flex;
@@ -39,9 +46,12 @@ nav{
 .dropdown-items{
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    right: 0px;
+    min-width: 110px;
+    text-align: right;
+    border-radius: 10px;
 }
 .dropdown:hover{
     cursor: pointer;
@@ -51,5 +61,13 @@ nav{
     padding: 10px;
 }
 .nav-link{
+    text-decoration: none;
+    font-weight: bolder;
     margin: 10px;
+    color: #FFFFFF;
+    transition: all .3s;
+}
+.nav-link:hover{
+    color: #FF7A00;
+    transform: translateX(10px);
 }

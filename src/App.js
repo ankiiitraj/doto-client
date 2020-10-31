@@ -8,6 +8,8 @@ import Main from "./components/main/Main";
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import 'react-notifications/lib/notifications.css';
 import Leaderboard from "./components/main/leaderboard/Leaderboard";
+import About from "./components/about/About";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [user, setUserDetail] = useState({ name: window.localStorage.getItem('name') ||"user", email: window.localStorage.getItem('email') || "N/A" });
@@ -27,7 +29,7 @@ function App() {
   };
   const fetchDone = () => {
     axios
-      .get("/api/done", {
+      .get(`${process.env.REACT_APP_BASE_ENDPOINT || ''}/done`, {
         headers: {
           'authorization': `Bearer ${window.localStorage.getItem("token")}`
         }
@@ -53,19 +55,21 @@ function App() {
   return (
     <div className="App">
       <Nav signout={signout} user={user} />
-      {window.location.pathname === '/' && <center><span style={{fontSize: 'x-large', color: (messsage === 'Loading data failed, try reloading!🧍‍♂️' ? '#f55331' : '#009879')}}>{messsage}</span></center>}
       <Switch>
         <ProtectedRoute
           exact
           user={user}
           signin={signin}
           done={done}
+          messsage={messsage}
           path="/"
           component={Main}
         />
         <Route exact path='/leaderboard' component={Leaderboard} />
+        <Route exact path='/about' component={About} />
         <Route path="/" component={Error} />
       </Switch>
+      <Footer />
     </div>
   );
 }

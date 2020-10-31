@@ -5,7 +5,7 @@ import './signin.css';
 import { useState } from "react";
 
 const Signin = (props) => {
-  const CLIENT_ID =
+  const CLIENT_ID = 
     "942881642900-4difoml0e6ctcj2r0ifvq9k5v842cl9t.apps.googleusercontent.com";
   const [message, signing] = useState('');
   const handleSignIn = (response) => {
@@ -15,12 +15,13 @@ const Signin = (props) => {
       name: response.profileObj.givenName,
     };
     axios
-    .post("/api/auth", payload)
+    .post(`${process.env.REACT_APP_BASE_ENDPOINT || ''}/auth`, payload)
     .then((res) => {
         signing('');
         window.localStorage.setItem("token", res.data.token);
         window.localStorage.setItem("email", response.profileObj.email);
         window.localStorage.setItem("name", response.profileObj.givenName);
+        window.localStorage.setItem("url", response.profileObj.imageUrl);
         props.signin(true);
       })
       .catch((err) => {

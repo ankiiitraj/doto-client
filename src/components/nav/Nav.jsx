@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Down } from "../data/down-arrow.svg";
 import "./nav.css";
 
 const Nav = (props) => {
@@ -12,26 +11,32 @@ const Nav = (props) => {
     <>
       <nav className="nav">
         <div className="nav-brand">
-          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-            DoTo <br />
-            <span style={{ fontSize: "large" }}>TrackProgress</span>
+          <Link to="/" style={{ textDecoration: "none", color: "#FF7A00" }}>
+            <b>Doto</b>
           </Link>
         </div>
         <div className="nav-items">
           <div className="nav-items">
             <div className="dropdown">
-              <button
+              <div
                 disabled={token ? false : true}
                 onClick={() => {
                   handleClick(!disabled);
                 }}
-                className="nav-button"
+                style={{
+                  backgroundColor: "#78cc71",
+                  backgroundImage: `url(${
+                    window.localStorage.getItem("url") || "./profile.png"
+                  })`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  width: "50px",
+                  height: "50px",
+                  borderRadius: "50px",
+                }}
+                title={props.user.name}
               >
-                Hello {props.user.name}!{" "}
-                <span>
-                  <Down height="15px" width="15px" />
-                </span>
-              </button>
+              </div>
               <div
                 onClick={() => {
                   handleClick(!disabled);
@@ -47,7 +52,7 @@ const Nav = (props) => {
                     }}
                     to="/"
                   >
-                    Sign out
+                    Sign-out
                   </Link>
                 </div>
               </div>
@@ -55,18 +60,25 @@ const Nav = (props) => {
           </div>
         </div>
       </nav>
-      <hr style={{ width: "100vw", height: "0px" }} />
       <div
         style={{
           display: "flex",
           fontSize: "x-large",
           justifyContent: "center",
+          backgroundColor: "#78cc71",
+          padding: "10px 0px"
         }}
       >
-        <Link className="nav-link" to="/">Home</Link>
-        <Link className="nav-link" to="/leaderboard">Leaderboard</Link>
+        <Link className="nav-link" to="/">
+          Home
+        </Link>
+        <Link className="nav-link" to="/about">
+          About
+        </Link>
+        <Link className="nav-link" to="/leaderboard">
+          Leaderboard
+        </Link>
       </div>
-      <hr style={{ width: "100vw", height: "0px" }} />
     </>
   );
 };

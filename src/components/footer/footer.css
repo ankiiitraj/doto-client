@@ -1,0 +1,36 @@
+.footer-hr{
+    margin: 0px auto;
+    background-color: #219653;
+    border: none;
+    border-radius: 10px;
+    height: 3px;
+}
+.footer-repo{
+    padding: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.footer-link{
+    text-decoration: underline;
+    color: black;
+    margin: 0px 10px;
+    font-weight: bolder;
+    transition: color .3s;
+}
+.footer-link:hover{
+    color: #219653;
+}
+.footer-logo{
+    height: 5em;
+    width: auto;
+    margin: 0px 10px;
+}
+.footer-logo-collection{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1em;   
+}
