@@ -21,7 +21,9 @@ const Nav = (props) => {
               <div
                 disabled={token ? false : true}
                 onClick={() => {
-                  handleClick(!disabled);
+                  if(token){
+                    handleClick(!disabled);
+                  }
                 }}
                 style={{
                   backgroundColor: "#78cc71",

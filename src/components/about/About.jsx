@@ -18,7 +18,7 @@ const About = () => {
           <span>
             Doto is a progress tracking application on problem solving and DSA
             mastery. <br />
-            Doto contains handpicked problems for DSA matery by people at{" "}
+            Doto contains handpicked problems for DSA mastery by people at{" "}
             <b>
               FAANG{" "}
               <span className="emoji" role="img" aria-label="emoji">
@@ -28,7 +28,7 @@ const About = () => {
             . <br />
             <small>
               P.S: The name Doto came from Todo! Sorry but I'm well known for
-              manupulating strings{" "}
+              manipulating strings{" "}
             </small>
             <span className="emoji" role="img" aria-label="emoji">
               😜
@@ -39,8 +39,8 @@ const About = () => {
         <div className="why">
           <h1>Why Doto?</h1>
           <span>
-            There's a story behind this and I'll try to cur it short. <br />
-            So, I wactched the video by <b>LOVE BABBAR</b> and decided to make
+            There's a story behind this and I'll try to cut it short. <br />
+            So, I watched the video by <b>LOVE BABBAR</b> and decided to make
             tracking easier for me!
             <br />
             And yes that's the whole story{" "}
@@ -64,8 +64,8 @@ const About = () => {
             &nbsp;We're working on various new cool features for the community,
             Stay tuned!
             <br />
-            Most notable of them is to built a sort discussion forum where
-            community can interact and learn in whole new level.
+            Most notable of them is to build a sort of discussion forum where
+            community can interact and learn at a whole new level.
           </span>
         </div>
         <div className="meet">

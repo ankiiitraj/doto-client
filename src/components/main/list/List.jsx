@@ -177,6 +177,7 @@ const List = (props) => {
                               className="spinner"
                               style={{
                                 marginLeft: "3px",
+                                WebkitMarginStart: "-15px",
                                 display: loading[id] === 0 ? "none" : "initial",
                               }}
                             >

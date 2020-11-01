@@ -10,6 +10,7 @@ import 'react-notifications/lib/notifications.css';
 import Leaderboard from "./components/main/leaderboard/Leaderboard";
 import About from "./components/about/About";
 import Footer from "./components/footer/Footer";
+import {   NotificationManager, NotificationContainer } from "react-notifications";
 
 function App() {
   const [user, setUserDetail] = useState({ name: window.localStorage.getItem('name') ||"user", email: window.localStorage.getItem('email') || "N/A" });
@@ -39,7 +40,9 @@ function App() {
         updateMessage('👨🏼‍💻');
       })
       .catch((err) => {
-        updateMessage('Loading data failed, try reloading!🧍‍♂️')
+        NotificationManager.warning("Loading data failed, please signin again!🧍‍♂️", "Woops");
+        window.localStorage.clear();
+        updateMessage("");
       });
   }
 
@@ -70,6 +73,7 @@ function App() {
         <Route path="/" component={Error} />
       </Switch>
       <Footer />
+      <NotificationContainer />
     </div>
   );
 }
