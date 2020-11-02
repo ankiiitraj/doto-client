@@ -11,7 +11,7 @@ const Main = (props) => {
 
   return (
     <>
-      <center style={{padding: "5px"}}>
+      <center style={{ padding: "5px" }}>
         <div className="user-detail">
           <span
             style={{
@@ -42,7 +42,10 @@ const Main = (props) => {
             </div>
           </div>
         </div>
-        <List done={props.done} updateCounter={updateCounter} />
+        <List
+          done={props.done}
+          updateCounter={updateCounter}
+        />
       </center>
     </>
   );

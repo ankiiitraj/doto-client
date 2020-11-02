@@ -17,7 +17,6 @@ const Leaderboard = () => {
       .then((res) => {
         updateData([...res.data.result]);
         updateLoaded(1);
-        console.log(res.data.result);
       })
       .catch((err) => {
         updateMessage("Something went wrong, Try reloading! 🤪");

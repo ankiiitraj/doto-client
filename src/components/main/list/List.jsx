@@ -10,7 +10,6 @@ import axios from "axios";
 import getTopicWiseCount from "../../util/topicFrequcecy";
 import "./list.css";
 
-let loaded = 0;
 const List = (props) => {
   const { updateCounter } = props;
   const [done, update] = useState(props.done || []);
@@ -20,18 +19,17 @@ const List = (props) => {
   const [topicWiseCount, updateTopicWiseCount] = useState(
     Array(topics.length).fill(0)
   );
-
+    
   useEffect(() => {
-    if (loaded === 1) {
+    if(props.done.length > 0){
       updateLock(0);
       getTopicWiseCount(props.done, data, topics).then((result) => {
         updateTopicWiseCount([...result]);
       });
     }
-    loaded = 1;
     update([...props.done]);
   }, [props.done]);
-
+  
   const updateDone = (id, checked) => {
     updateLoading(
       loading.map((elem, idx) => {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Route, Switch, useHistory } from "react-router-dom";
+import { Route, Switch, useHistory, useLocation } from "react-router-dom";
 import "./App.css";
 import Error from "./components/error/Error.jsx";
 import Nav from "./components/nav/Nav";
@@ -46,11 +46,15 @@ function App() {
       });
   }
 
+  const location = useLocation();
   useEffect(() => {
-    if(window.localStorage.getItem('token')){
+    if(window.localStorage.getItem('token') && location.pathname === "/"){
       fetchDone();
+    }else if(window.localStorage.getItem('token') && location.pathname !== "/"){
+      setDone([]);
+      updateMessage(`Loading Data . . . 🚶‍♂️`);
     }
-  }, [])
+  }, [location])
 
   const signout = () => {
     setUserDetail({name: 'user', email: ''});
