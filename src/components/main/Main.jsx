@@ -45,6 +45,7 @@ const Main = (props) => {
         <List
           done={props.done}
           updateCounter={updateCounter}
+          dataArrived={props.dataArrived}
         />
       </center>
     </>

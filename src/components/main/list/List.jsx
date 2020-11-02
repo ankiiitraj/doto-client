@@ -21,14 +21,14 @@ const List = (props) => {
   );
     
   useEffect(() => {
-    if(props.done.length > 0){
+    if(props.dataArrived === true){
       updateLock(0);
       getTopicWiseCount(props.done, data, topics).then((result) => {
         updateTopicWiseCount([...result]);
       });
     }
     update([...props.done]);
-  }, [props.done]);
+  }, [props.done, props.dataArrived]);
   
   const updateDone = (id, checked) => {
     updateLoading(

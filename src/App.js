@@ -15,6 +15,7 @@ import {   NotificationManager, NotificationContainer } from "react-notification
 function App() {
   const [user, setUserDetail] = useState({ name: window.localStorage.getItem('name') ||"user", email: window.localStorage.getItem('email') || "N/A" });
   const [done, setDone] = useState([]);
+  const [dataArrived, updateArrival] = useState(false);
   const [messsage, updateMessage] = useState(`Loading Data . . . 🚶‍♂️`);
   const history = useHistory();
 
@@ -38,6 +39,7 @@ function App() {
       .then((result) => {
         setDone([...result.data.result.done]);
         updateMessage('👨🏼‍💻');
+        updateArrival(true);
       })
       .catch((err) => {
         NotificationManager.warning("Loading data failed, please signin again!🧍‍♂️", "Woops");
@@ -53,6 +55,7 @@ function App() {
     }else if(window.localStorage.getItem('token') && location.pathname !== "/"){
       setDone([]);
       updateMessage(`Loading Data . . . 🚶‍♂️`);
+      updateArrival(false);
     }
   }, [location])
 
@@ -69,6 +72,7 @@ function App() {
           signin={signin}
           done={done}
           messsage={messsage}
+          dataArrived={dataArrived}
           path="/"
           component={Main}
         />
