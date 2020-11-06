@@ -72,15 +72,15 @@ const Nav = (props) => {
         }}
       >
         <Link className="nav-link" to="/">
-          Home
+          home
         </Link>
         <Link className="nav-link" to="/about">
-          About
+          about
         </Link>
         <Link className="nav-link" to="/leaderboard">
-          Leaderboard
+          leaderboard
         </Link>
-      </div>
+        </div>
     </>
   );
 };

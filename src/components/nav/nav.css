@@ -38,7 +38,7 @@ nav{
 .nav-button:active {
 	position:relative;
 	top:1px;
-}    
+}
 .dropdown{
     position: relative;
     display: inline-block;
@@ -63,11 +63,14 @@ nav{
 .nav-link{
     text-decoration: none;
     font-weight: bolder;
-    margin: 10px;
-    color: #FFFFFF;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #cbffb7;
     transition: all .3s;
+    font-weight: 700;
 }
 .nav-link:hover{
-    color: #FF7A00;
-    transform: translateX(10px);
+    color: #ffffff;
 }
