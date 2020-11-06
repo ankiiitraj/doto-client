@@ -1,10 +1,24 @@
 .user-detail{
     min-width: 320px;
 	max-width: 700px;
-    margin: 2em auto;
+    margin-top: 2em;
 	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     background-color: #FFF;
     font-size: xx-large;
     padding: 15px;
+}
+.main-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.main-card svg{
+    height: 5vh;
+    width: 5vh;
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+.rotated{
+    transform: rotate(-180deg) !important;
 }

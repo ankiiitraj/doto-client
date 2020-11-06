@@ -33,7 +33,7 @@ const Leaderboard = () => {
             <thead>
               <tr>
                 <th>#</th>
-                <th>Name</th>
+                <th>Username</th>
                 <th>Score</th>
                 <th className="overflow">Questions</th>
               </tr>
@@ -41,9 +41,10 @@ const Leaderboard = () => {
             <tbody>
               {data.map((elem, idx) => {
                 return (
+                  elem.inLeaderboard &&
                   <tr key={idx}>
                     <td>{idx + 1}</td>
-                    <td>{elem.name}</td>
+                    <td title={elem.name}>{elem.username}</td>
                     <td>{elem.done.length}</td>
                     <td className='overflow'>
 											{elem.done.map((prob, id) => {

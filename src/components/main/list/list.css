@@ -105,13 +105,13 @@ input:checked + label:after {
 	transform: translateX(-100%);
 }
 
-input:default + label {
+/* input:default + label {
 	background: #89cfbf;
 }
 input[type="checkbox"]:default + label:after {
     left: calc(100% - 1px);
 	transform: translateX(-100%);
- }
+} */
 
 label:active:after {
 	width: 13px;
