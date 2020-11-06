@@ -48,7 +48,7 @@ const Leaderboard = () => {
                     <td>{elem.done.length}</td>
                     <td className='overflow'>
 											{elem.done.map((prob, id) => {
-												return <span key={id}>{prob}, </span>
+												return <span key={id}>{prob}{id<elem.done.length -1?",":""} </span>
 											})}
 										</td>
                   </tr>
