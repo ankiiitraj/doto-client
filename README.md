@@ -3,7 +3,7 @@ Made with ❤.
 
 Track your progress and multiply efficiency through DoTo.
 
-DoTo contains handpicked problems for DSA mastrey
+DoTo contains handpicked problems for DSA mastery
 by none other than **Love Babbar**.
 
 Check out the video where Love Babbar talks about these questions.
