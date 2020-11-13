@@ -23,6 +23,7 @@ const Leaderboard = () => {
         NotificationManager.warning("Something went wrong, Try reloading! 🤪");
       });
   }, []);
+  let ranking = 1;
 
   return (
     <>
@@ -43,7 +44,7 @@ const Leaderboard = () => {
                 return (
                   elem.inLeaderboard &&
                   <tr key={idx}>
-                    <td>{idx + 1}</td>
+                    <td>{ranking++}</td>
                     <td title={elem.name}>{elem.username}</td>
                     <td>{elem.done.length}</td>
                     <td className='overflow'>
