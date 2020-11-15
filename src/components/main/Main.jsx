@@ -10,11 +10,31 @@ const Main = (props) => {
 
   useEffect(() => {
     updateCounter(props.done.length);
+    var d = document;
+    var x = !d.getElementById("razorpay-embed-btn-js");
+    if (x) {
+      var s = d.createElement("script");
+      s.defer = !0;
+      s.id = "razorpay-embed-btn-js";
+      s.src = "https://cdn.razorpay.com/static/embed_btn/bundle.js";
+      d.body.appendChild(s);
+    } else {
+      var rzp = window["__rzp__"];
+      rzp && rzp.init && rzp.init();
+    }
   }, [props.done]);
 
   return (
     <>
       <center style={{ padding: "5px" }}>
+        <div
+          style={{position: "fixed", bottom: "0", right: "0", zIndex: "1000"}}
+          className="razorpay-embed-btn"
+          data-url="https://pages.razorpay.com/pl_G1Yg5MfSMvwqxs/view"
+          data-text="Donate Now"
+          data-color="#528FF0"
+          data-size="medium"
+        ></div>
         <div className="user-detail">
           <span
             style={{
@@ -45,7 +65,11 @@ const Main = (props) => {
                 Solved
               </div>
             </div>
-            <div onClick={()=>{toggleSettings(!settingsOpen)}}>
+            <div
+              onClick={() => {
+                toggleSettings(!settingsOpen);
+              }}
+            >
               <FcSettings className={settingsOpen ? "rotated" : ""} />
             </div>
           </div>

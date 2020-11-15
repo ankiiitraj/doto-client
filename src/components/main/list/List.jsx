@@ -19,9 +19,9 @@ const List = (props) => {
   const [topicWiseCount, updateTopicWiseCount] = useState(
     Array(topics.length).fill(0)
   );
-    
+
   useEffect(() => {
-    if(props.dataArrived === true){
+    if (props.dataArrived === true) {
       updateLock(0);
       getTopicWiseCount(props.done, data, topics).then((result) => {
         updateTopicWiseCount([...result]);
@@ -29,7 +29,7 @@ const List = (props) => {
     }
     update([...props.done]);
   }, [props.done, props.dataArrived]);
-  
+
   const updateDone = (id, checked) => {
     updateLoading(
       loading.map((elem, idx) => {
@@ -68,7 +68,7 @@ const List = (props) => {
           })
         );
         updateLock(0);
-        NotificationManager.success("Status has been updated 🎉", "Update");
+        NotificationManager.success("Updated 🎉");
       })
       .catch((err) => {
         updateLoading(
@@ -77,10 +77,7 @@ const List = (props) => {
           })
         );
         updateLock(0);
-        NotificationManager.warning(
-          "something wrong happened! try again later 😵",
-          2000
-        );
+        NotificationManager.warning("Error 😵");
       });
   };
 
@@ -111,8 +108,17 @@ const List = (props) => {
                   justifyContent: "center",
                 }}
               >
-                <span style={{ color: "#B2B2B2",fontSize: "x-large", marginRight: '10px' }}>
-                <span style={{ color: "#FF7A00" }}>{topicWiseCount[idx].done || 0}</span> / {topicWiseCount[idx].total || 0}
+                <span
+                  style={{
+                    color: "#B2B2B2",
+                    fontSize: "x-large",
+                    marginRight: "10px",
+                  }}
+                >
+                  <span style={{ color: "#FF7A00" }}>
+                    {topicWiseCount[idx].done || 0}
+                  </span>{" "}
+                  / {topicWiseCount[idx].total || 0}
                 </span>
                 <Arrow
                   style={{

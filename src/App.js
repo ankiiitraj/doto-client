@@ -6,7 +6,7 @@ import Error from "./components/error/Error.jsx";
 import Nav from "./components/nav/Nav";
 import Main from "./components/main/Main";
 import ProtectedRoute from './components/ProtectedRoute.jsx';
-import 'react-notifications/lib/notifications.css';
+import "./react-notification.css"
 import Leaderboard from "./components/main/leaderboard/Leaderboard";
 import About from "./components/about/About";
 import Footer from "./components/footer/Footer";
