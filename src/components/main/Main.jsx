@@ -31,7 +31,7 @@ const Main = (props) => {
           style={{position: "fixed", bottom: "0", right: "0", zIndex: "1000"}}
           className="razorpay-embed-btn"
           data-url="https://pages.razorpay.com/pl_G1Yg5MfSMvwqxs/view"
-          data-text="Donate Now"
+          data-text="Support Us"
           data-color="#528FF0"
           data-size="medium"
         ></div>
