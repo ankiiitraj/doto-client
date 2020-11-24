@@ -28,7 +28,7 @@ const Main = (props) => {
     <>
       <center style={{ padding: "5px" }}>
         <div
-          style={{position: "fixed", bottom: "0", right: "0", zIndex: "1000"}}
+          style={{display: (window.innerWidth < 700 ? "none" : ""), position: "fixed", bottom: "0", right: "0", zIndex: "1000"}}
           className="razorpay-embed-btn"
           data-url="https://pages.razorpay.com/pl_G1Yg5MfSMvwqxs/view"
           data-text="Support Us"
