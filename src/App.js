@@ -16,7 +16,7 @@ function App() {
   const [user, setUserDetail] = useState({ name: window.localStorage.getItem('name') ||"user", email: window.localStorage.getItem('email') || "N/A" });
   const [done, setDone] = useState([]);
   const [dataArrived, updateArrival] = useState(false);
-  const [messsage, updateMessage] = useState(`Loading Data . . . 🚶‍♂️`);
+  const [message, updateMessage] = useState(`Loading Data . . . 🚶‍♂️`);
   const history = useHistory();
 
   const signin = (success) => {
@@ -71,7 +71,7 @@ function App() {
           user={user}
           signin={signin}
           done={done}
-          messsage={messsage}
+          message={message}
           dataArrived={dataArrived}
           path="/"
           component={Main}

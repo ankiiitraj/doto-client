@@ -7,7 +7,7 @@ import data from "../../data/problems.json";
 import topics from "../../data/topics.json";
 import { ReactComponent as Arrow } from "../../data/arrow.svg";
 import axios from "axios";
-import getTopicWiseCount from "../../util/topicFrequcecy";
+import getTopicWiseCount from "../../util/topicFrequency";
 import "./list.css";
 
 const List = (props) => {

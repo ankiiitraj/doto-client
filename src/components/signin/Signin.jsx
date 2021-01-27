@@ -1,56 +1,64 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { GoogleLogin } from "react-google-login";
-import './signin.css';
-import { useState } from "react";
+import "./signin.css";
+import { useLocation } from "react-router-dom";
+import GoogleLogo from "./images/google-logo.png";
 
 const Signin = (props) => {
-  const CLIENT_ID = 
-    "942881642900-4difoml0e6ctcj2r0ifvq9k5v842cl9t.apps.googleusercontent.com";
-  const [message, signing] = useState('');
-  const handleSignIn = (response) => {
-    signing('Signing you in . . .');
-    const payload = {
-      email: response.profileObj.email,
-      name: response.profileObj.givenName,
+  const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+  const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
+  const authURI = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=openid%20email%20profile`;
+  const [message, signing] = useState("");
+  const location = useLocation().search;
+  const code = new URLSearchParams(location).get("code");
+  
+  useEffect(() => {
+    const handleSignIn = () => {
+      signing("Signing you in . . .");
+      axios
+        .get(`${process.env.REACT_APP_BASE_ENDPOINT || ""}/auth?code=${code}`)
+        .then((res) => {
+          signing("");
+          window.localStorage.setItem("token", res.data.token);
+          window.localStorage.setItem("email", res.data.email);
+          window.localStorage.setItem("name", res.data.given_name);
+          window.localStorage.setItem("url", res.data.picture);
+          props.signin(true);
+        })
+        .catch((err) => {
+          signing("Something went wrong! Try reloading or open in PC");
+          window.localStorage.clear();
+        });
     };
-    axios
-    .post(`${process.env.REACT_APP_BASE_ENDPOINT || ''}/auth`, payload)
-    .then((res) => {
-        signing('');
-        window.localStorage.setItem("token", res.data.token);
-        window.localStorage.setItem("email", response.profileObj.email);
-        window.localStorage.setItem("name", response.profileObj.givenName);
-        window.localStorage.setItem("url", response.profileObj.imageUrl);
-        props.signin(true);
-      })
-      .catch((err) => {
-        signing('Something went wrong! Try reloading or open in PC');
-      });
-  };
+    if (code) {
+      handleSignIn();
+    }
+  // eslint-disable-next-line
+  }, []);
   return (
     <>
-      <center><h1>{message}</h1></center>
+      <center>
+        <h1>{message}</h1>
+      </center>
       <div className="signin">
         <div className="signin-about">
-          Track your progress and multiply efficiency through DoTo.<br/> DoTo contains handpicked problems for DSA mastery <br/> by none other than <b>Love Babbar</b>.<br/>
-          <br/>Check out the video where Love Babbar talks about these questions.<br/>
-          <a rel='noopener noreferrer' target='_blank' href='https://www.youtube.com/watch?v=4iFALQ1ACdA'>Link</a>
+          Track your progress and multiply efficiency through{" "}
+          <span style={{ color: "#ff7a00", fontWeight: "bold" }}>Doto</span>.
+          <br />{" "}
+          <span style={{ color: "#ff7a00", fontWeight: "bold" }}>
+            Doto
+          </span>{" "}
+          contains handpicked problems for getting hold over fundamentals of DSA{" "}
+          <b>by the best peoples around</b>.<br />
         </div>
         <div className="signin-box">
-          <h1>Sign in to get started!</h1>
-          <GoogleLogin
-            clientId={CLIENT_ID}
-            buttonText="Sign in"
-            onSuccess={(response) => {
-              handleSignIn(response);
-            }}
-            onFailure={() => {
-              props.history.push("/error");
-            }}
-            cookiePolicy={"single_host_origin"}
-            responseType="code,token"
-          />
+          <h1 style={{ margin: "10px 0px" }}>Sign in to get started!</h1>
+          <a style={{ textDecoration: "none", color: "black" }} href={authURI}>
+            <div className="login-with-google">
+              <img alt="Google logo" className="logo-google" src={GoogleLogo} />
+              Signin with Google
+            </div>
+          </a>
         </div>
       </div>
     </>

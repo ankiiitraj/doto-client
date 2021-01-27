@@ -40,12 +40,12 @@ const Main = (props) => {
             style={{
               fontSize: "xx-large",
               color:
-                props.messsage === "Loading data failed, try reloading!🧍‍♂️"
+                props.message === "Loading data failed, try reloading!🧍‍♂️"
                   ? "#f55331"
                   : "#009879",
             }}
           >
-            {props.messsage}
+            {props.message}
           </span>
           <hr
             style={{ background: "#96FF8D", height: "2px", border: "none" }}
