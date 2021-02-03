@@ -16,7 +16,6 @@ const Leaderboard = ({username}) => {
   const limit = 25;
   let ranking = 1;
   useEffect(() => {
-    console.log(username);
     updateLoaded(0);
     axios
       .get(
@@ -34,7 +33,6 @@ const Leaderboard = ({username}) => {
             toggleDisableNext(false);
           }
           updateData([...res.data.result]);
-          console.log(res.data.result);
         }
         updateLoaded(1);
       })
@@ -42,7 +40,7 @@ const Leaderboard = ({username}) => {
         updateMessage("Something went wrong, Try reloading! 🤪");
         NotificationManager.warning("Something went wrong, Try reloading! 🤪");
       });
-  }, [pageOffset]);
+  }, [pageOffset, username]);
 
   return (
     <>
