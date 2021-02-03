@@ -60,7 +60,7 @@ const Leaderboard = ({username}) => {
               {data.map((elem, idx) => {
                 return (
                   elem.inLeaderboard && (
-                    <tr style={{backgroundColor: elem.username === username ? "#227aa9" : ""}} key={idx}>
+                    <tr style={{backgroundColor: elem.username === username ? "#13aa52" : ""}} key={idx}>
                       <td>{pageOffset * limit + ranking++}</td>
                       <td title={elem.name}>{elem.username}</td>
                       <td>{elem.done.length}</td>
