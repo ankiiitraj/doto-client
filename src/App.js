@@ -76,7 +76,7 @@ function App() {
           path="/"
           component={Main}
         />
-        <Route exact path='/leaderboard' component={Leaderboard} />
+        <Route exact path='/leaderboard'> <Leaderboard username={user.name !== "user" ? user.email.split('@')[0] : ""} /> </Route>
         <Route exact path='/about' component={About} />
         <Route path="/" component={Error} />
       </Switch>

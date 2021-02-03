@@ -9,6 +9,20 @@
     max-width: 700px;
     margin: 10px auto;
 }
+.paginate-button{
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    font-size: small;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0px 10px 10px 0px;
+}
+.paginate-button:hover{
+    border: 1px solid #219653;
+    color: #219653;
+    cursor: pointer;
+}
 @media only screen and (max-width: 600px){
     .overflow{
         display: none;
