@@ -26,9 +26,9 @@ const Nav = (props) => {
             <div className="dropdown">
 
               {/* Menu icon */}
-              <div className="menu-icon" onClick={handleOpen}>
+              {/* <div className="menu-icon" onClick={handleOpen}>
                   <i className={ clicked ? "fas fa-times" : "fas fa-bars"}></i>
-              </div>
+              </div> */}
 
               <ul className={clicked ? "nav-list active" : "nav-list"}>
               <Link className="nav-link" to="/" onClick={handleOpen}>
@@ -46,10 +46,23 @@ const Nav = (props) => {
                   Leaderboard
                 </li>
               </Link>
+              <Link
+                    className={disabled ? "hidden" : "nav-link-mobile"}
+                    onClick={() => {
+                      window.localStorage.clear();
+                      props.signout();
+                      handleOpen()
+                    }}
+                    to="/"
+                  >
+                    <li>
+                      Sign-out
+                    </li>
+              </Link>
             </ul>
 
               <div
-                className="avatar"
+                className="avatar mobile"
                 disabled={token ? false : true}
                 onClick={() => {
                   if(token){
@@ -73,7 +86,7 @@ const Nav = (props) => {
                 style={{ display: disabled ? "none" : "block" }}
                 className="dropdown-items"
               >
-                <div className="dropdown-item">
+                <div className="dropdown-item mobile">
                   <Link
                     onClick={() => {
                       window.localStorage.clear();
@@ -84,6 +97,11 @@ const Nav = (props) => {
                     Sign-out
                   </Link>
                 </div>
+              </div>
+
+              {/* Menu icon */}
+              <div className="menu-icon" onClick={handleOpen}>
+                  <i className={ clicked ? "fas fa-times" : "fas fa-bars"}></i>
               </div>
 
             </div>

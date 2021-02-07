@@ -110,11 +110,22 @@
     border-radius: 50px
 }
 
+.hidden{
+    display: none;
+}
 
 @media screen and (max-width: 550px ){
+    .mobile{
+        display: none;
+    }
+    .dropdown{
+        margin-right: 0;
+    }
+
     .menu-icon{
         display: block;
         color: white;
+        padding: 10px;
     }
     .nav-list{
         display: flex;
@@ -132,6 +143,18 @@
         transition: all 0.3s ease-out;
         font-size: 1.3rem;
         padding: 0.6rem;
+    }
+    .nav-link-mobile{
+        display: inline-block;
+        text-decoration: none;
+        font-weight: bolder;
+        margin: 10px;
+        color: #FFFFFF;
+        transition: all .3s;
+    }
+    .nav-link-mobile:hover{
+        color: #FF7A00;
+        transform: translateX(10px);
     }
 
 }
