@@ -1,12 +1,8 @@
 .nav{
-
-    /* display: flex;
-    justify-content: space-between; */
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: .5em;
-    /* background-color:#e9e9e9; */
-    /* background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); */
     background-image: linear-gradient(120deg,#73ff81 0%,#58f399 100%);
 }
 .nav-brand{
@@ -14,20 +10,13 @@
     letter-spacing: 1px;
     font-size: xxx-large;
     transition: all .5s;
-    /* position: absolute; */
-    top: 0;
-    left: 0;
-
 }
 .nav-brand:hover{
     letter-spacing: 5px;
 }
-
-
 .nav-items{
     display: flex;
-    /* align-items: center;
-    vertical-align: middle; */
+    align-items: center;
 }
 .nav-button{
     box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -51,16 +40,16 @@
 	top:1px;
 }    
 .dropdown{
-    /* display: inline-block; */
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    margin-right: 80px;
 }
 .dropdown-items{
     position: absolute;
     background-color: #f1f1f1;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    top: 70px;
     right: 0px;
     min-width: 110px;
     text-align: right;
@@ -89,25 +78,24 @@
     display: flex;
     text-decoration: none;
     list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .menu-icon{
-    /* background-color: red; */
     display: none;
     font-size: 1.8rem;
     padding-top: 15px;
 }
 
 .avatar{
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-40%,40%);
     background-size: cover;
     background-position: center;
     width: 50px;
     height: 50px;
-    border-radius: 50px
+    border-radius: 50px;
+    margin: 10px;
 }
 
 .hidden{
@@ -128,15 +116,16 @@
         padding: 10px;
     }
     .nav-list{
+        align-items: flex-start;
         display: flex;
         flex-direction: column;
         background-image: linear-gradient(120deg,#73ff81 0%,#58f399 100%);
-        /* background-color: blue; */
         position: absolute;
-        top: 52px;
+        top: 70px;
         width: 100%;
         left: -120%;
         transition: all 0.3s ease-out;
+        z-index: 100;
     }
     .nav-list.active{
         left: 0;
