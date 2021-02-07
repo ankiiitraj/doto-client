@@ -7,18 +7,49 @@ const Nav = (props) => {
   const [disabled, handleClick] = useState(true);
   const token = window.localStorage.getItem("token");
 
+  const [clicked, setClicked] = useState(false);
+
+  const handleOpen = () => {
+    setClicked(!clicked)
+  }
+
   return (
-    <>
       <nav className="nav">
         <div className="nav-brand">
           <Link to="/" style={{ textDecoration: "none", color: "#FF7A00" }}>
             <b>Doto</b>
           </Link>
         </div>
+
         <div className="nav-items">
-          <div className="nav-items">
+
             <div className="dropdown">
+
+              {/* Menu icon */}
+              <div className="menu-icon" onClick={handleOpen}>
+                  <i className={ clicked ? "fas fa-times" : "fas fa-bars"}></i>
+              </div>
+
+              <ul className={clicked ? "nav-list active" : "nav-list"}>
+              <Link className="nav-link" to="/" onClick={handleOpen}>
+                <li>
+                  Home
+                </li>
+              </Link>
+              <Link className="nav-link" to="/about" onClick={handleOpen}>
+                <li>
+                  About
+                </li>
+              </Link>
+              <Link className="nav-link" to="/leaderboard" onClick={handleOpen}>
+                <li>
+                  Leaderboard
+                </li>
+              </Link>
+            </ul>
+
               <div
+                className="avatar"
                 disabled={token ? false : true}
                 onClick={() => {
                   if(token){
@@ -30,15 +61,11 @@ const Nav = (props) => {
                   backgroundImage: `url(${
                     window.localStorage.getItem("url") || "./profile.png"
                   })`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  width: "50px",
-                  height: "50px",
-                  borderRadius: "50px",
                 }}
                 title={props.user.name}
               >
               </div>
+
               <div
                 onClick={() => {
                   handleClick(!disabled);
@@ -58,30 +85,12 @@ const Nav = (props) => {
                   </Link>
                 </div>
               </div>
+
             </div>
-          </div>
+
         </div>
+
       </nav>
-      <div
-        style={{
-          display: "flex",
-          fontSize: "x-large",
-          justifyContent: "center",
-          backgroundColor: "#78cc71",
-          padding: "10px 0px"
-        }}
-      >
-        <Link className="nav-link" to="/">
-          Home
-        </Link>
-        <Link className="nav-link" to="/about">
-          About
-        </Link>
-        <Link className="nav-link" to="/leaderboard">
-          Leaderboard
-        </Link>
-      </div>
-    </>
   );
 };
 
