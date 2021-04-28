@@ -11,6 +11,7 @@ import Leaderboard from "./components/main/leaderboard/Leaderboard";
 import About from "./components/about/About";
 import Footer from "./components/footer/Footer";
 import {   NotificationManager, NotificationContainer } from "react-notifications";
+import Notify from "./components/Notify/Notify";
 
 function App() {
   const [user, setUserDetail] = useState({ name: window.localStorage.getItem('name') ||"user", email: window.localStorage.getItem('email') || "N/A" });
@@ -64,6 +65,7 @@ function App() {
   } 
   return (
     <div className="App">
+      <Notify />
       <Nav signout={signout} user={user} />
       <Switch>
         <ProtectedRoute
