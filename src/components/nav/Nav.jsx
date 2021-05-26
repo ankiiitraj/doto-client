@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logo_lite from "./images/logo_lite.png";
 import "./nav.css";
 
 const Nav = (props) => {
@@ -16,8 +17,8 @@ const Nav = (props) => {
   return (
     <nav className="nav">
       <div className="nav-brand">
-        <Link to="/" style={{ textDecoration: "none", color: "#FF7A00" }}>
-          <b>Doto</b>
+        <Link to="/" style={{ textDecoration: "none"}}>
+          <img style ={{maxWidth:"7rem"}} src={logo_lite} alt={"logo"}/>
         </Link>
       </div>
 
@@ -26,13 +27,16 @@ const Nav = (props) => {
           {/* Menu icon */}
           <ul className={clicked ? "nav-list active" : "nav-list"}>
             <Link className="nav-link" to="/" onClick={handleOpen}>
-              <li>Home</li>
+              <li>home</li>
             </Link>
             <Link className="nav-link" to="/about" onClick={handleOpen}>
-              <li>About</li>
+              <li>about</li>
             </Link>
             <Link className="nav-link" to="/leaderboard" onClick={handleOpen}>
-              <li>Leaderboard</li>
+              <li>leaderboard</li>
+            </Link>
+            <Link className="nav-link" to="/lists" onClick={handleOpen}>
+              <li>change list</li>
             </Link>
             <Link
               className={!token ? "hidden" : "nav-link-mobile hidden"}
@@ -46,7 +50,8 @@ const Nav = (props) => {
               <li>Sign-out</li>
             </Link>
           </ul>
-
+          </div>
+          </div>  
           <div
             className="avatar mobile"
             disabled={token ? false : true}
@@ -88,8 +93,7 @@ const Nav = (props) => {
           <div className="menu-icon" onClick={handleOpen}>
             <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
           </div>
-        </div>
-      </div>
+          
     </nav>
   );
 };
