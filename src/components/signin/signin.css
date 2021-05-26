@@ -7,16 +7,16 @@
     min-height: 100vh;
 }
 .signin-about{
-    max-width: 700px;
+    max-width: 80vw;
     padding: 2em;
-    font-size: 2.2rem;
+    font-size: 2.7rem;
     align-items: center;
     text-align: center;
     font-weight: 800;
-    opacity: .9;
+    opacity: .8;
 }
 .signin-box{
-    max-width: 700px;
+    max-width: 80vw;
     padding: 2em;
     padding-top: 0;
     font-size: large;

@@ -3,6 +3,7 @@ import axios from "axios";
 import "./signin.css";
 import { useLocation } from "react-router-dom";
 import GoogleLogo from "./images/google-logo.png";
+import logo from "./images/logo.png";
 
 const Signin = (props) => {
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
@@ -41,13 +42,14 @@ const Signin = (props) => {
         <h1>{message}</h1>
       </center>
       <div className="signin">
+        <img src={logo} style={{maxWidth:"33rem"}} alt="logo"/>
         <div className="signin-about">
-          Hand picked problem lists for complete interview preparation. Start Solving <span alt={"dev emoji"} role={"img"} aria-label={"dev emoji"}>👨🏻‍💻</span>
+          Hand picked problem lists for complete<br/> interview preparation. Start Solving <span alt={"dev emoji"} role={"img"} aria-label={"dev emoji"}>👨🏻‍💻</span>
         </div>
         <div className="signin-box">
           <a style={{ textDecoration: "none", color: "black" }} href={authURI}>
             <div className="login-with-google">
-              <img alt="Google logo" className="logo-google" src={GoogleLogo} />
+              <img alt="Google logo" className="logo-google" src={GoogleLogo}/>
                 signin with google
             </div>
           </a>
