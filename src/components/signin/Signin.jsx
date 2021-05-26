@@ -42,21 +42,13 @@ const Signin = (props) => {
       </center>
       <div className="signin">
         <div className="signin-about">
-          Track your progress and multiply efficiency through{" "}
-          <span style={{ color: "#ff7a00", fontWeight: "bold" }}>Doto</span>.
-          <br />{" "}
-          <span style={{ color: "#ff7a00", fontWeight: "bold" }}>
-            Doto
-          </span>{" "}
-          contains handpicked problems for getting hold over fundamentals of DSA{" "}
-          <b>by the best peoples around</b>.<br />
+          Hand picked problem lists for complete interview preparation. Start Solving <span alt={"dev emoji"} role={"img"} aria-label={"dev emoji"}>👨🏻‍💻</span>
         </div>
         <div className="signin-box">
-          <h1 style={{ margin: "10px 0px" }}>Sign in to get started!</h1>
           <a style={{ textDecoration: "none", color: "black" }} href={authURI}>
             <div className="login-with-google">
               <img alt="Google logo" className="logo-google" src={GoogleLogo} />
-              Signin with Google
+                signin with google
             </div>
           </a>
         </div>
