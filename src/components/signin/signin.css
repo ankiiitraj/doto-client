@@ -9,11 +9,13 @@
 .signin-about{
     max-width: 80vw;
     padding: 2em;
-    font-size: 2.7rem;
+    font-size: 2.6rem;
     align-items: center;
     text-align: center;
-    font-weight: 800;
-    opacity: .8;
+    font-weight: 700;
+    line-height: 130%;
+    opacity: .73;
+    color: rgb(30, 0, 58);
 }
 .signin-box{
     max-width: 80vw;
