@@ -32,7 +32,7 @@
     border-radius: 14px;
     box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
     transition-duration: .2s;
-    font-weight: 800;
+    font-weight: 700;
     color: rgb(61, 61, 61);
     margin-bottom: 10vh;
 }
@@ -43,4 +43,20 @@
     margin-right: 18px;
     height: 20px;
     width: auto;
+}
+
+.logo-main{
+    max-width: 33rem;
+    margin-top: 10vh;
+}
+
+@media screen and (max-width: 550px ){
+    .signin-about{
+        font-size: 1.8rem;
+    }
+
+    .logo-main{
+        max-width: 25rem;
+    }
+
 }

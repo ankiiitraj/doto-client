@@ -90,7 +90,9 @@ function App() {
         <Route path="/" component={Error} />
       </Switch>
       <NotificationContainer />
+      <div style={{marginLeft:"auto",marginRight:"auto"}}>
       <Footer />
+      </div>
     </div>
   );
 }
