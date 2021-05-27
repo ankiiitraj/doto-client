@@ -1,66 +1,59 @@
 import React from "react";
 import "./footer.css";
-import { DiReact, DiMongodb, DiGithubBadge } from "react-icons/di";
-import { FaNode } from "react-icons/fa";
-import { SiNetlify } from "react-icons/si";
-import { GrHeroku } from "react-icons/gr";
 
 const Footer = () => {
   return (
     <div className="footer">
-      <hr className="footer-hr" width="90%" />
       <div className="footer-wrapper">
-        <div className="footer-logo-collection">
-          <DiReact className="footer-logo" style={{ color: "#61dafb" }} />
-          <FaNode className="footer-logo" style={{ color: "#026e00" }} />
-          <DiMongodb className="footer-logo" style={{ color: "#13aa52" }} />
-          <SiNetlify className="footer-logo" style={{ color: "#227aa9" }} />
-          <GrHeroku className="footer-logo" style={{ color: "#79589f" }} />
-          <DiGithubBadge className="footer-logo" style={{ color: "#608c9f" }} />
-        </div>
         <div className="footer-repo">
           <a
             target="_blank"
             rel="noopener noreferrer"
-            className="footer-link"
-            href="https://github.com/ankiiitraj/doto-client"
-          >
-            Source Code
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-link"
+            className={"footer-link"}
             href="https://github.com/ankiiitraj/doto-client/issues"
           >
-            Getting Involved
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-link"
-            href="https://github.com/ankiiitraj/doto-client/issues/new"
-          >
-            Report a bug{" "}
-            <span role="img" aria-label="emoji">
-              🐛
+            <div className={"footer-div-small"}>
+            getting involved {" "}
+            <span role="img" aria-label="emoji" alt={"bug emoji"}>
+              🎉
             </span>
+            </div>
           </a>
-        </div>
-      </div>
-      <hr className="footer-hr" width="60%" />
-      <div style={{ marginBottom: "10px", textAlign: "center" }}>
+          </div>
+
+          <div style={{marginTop:"20px", textAlign: "center" }} className={"made-with"}>
         <span>
-          Made with <span style={{ color: "#FF0000" }}>❤</span> by{" "}
+          made with <span style={{ color: "#FF0000" }}>❤</span> by{" "}
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/ankiiitraj"
+            style={{textDecoration:"none"}}
           >
-            Ankit
+            <b>ankit</b>
           </a>
         </span>{" "}
-        and Open Sourced.
+        and open sourced
+      </div>
+
+      
+          <div className="footer-repo">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className={"footer-link"}
+            href="https://github.com/ankiiitraj/doto-client/issues/new"
+          >
+            <div className={"footer-div-small"}>
+            report a bug{" "}
+            <span role="img" aria-label="emoji" alt={"bug emoji"}>
+              🐛
+            </span>
+            </div>
+          </a>
+        </div>
+      
+     
       </div>
     </div>
   );

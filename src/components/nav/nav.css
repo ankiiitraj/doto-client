@@ -2,17 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .5em;
-    background-image: linear-gradient(120deg,#73ff81 0%,#58f399 100%);
-}
-.nav-brand{
-    font-family: 'Podkova', serif;
-    letter-spacing: 1px;
-    font-size: xxx-large;
-    transition: all .5s;
-}
-.nav-brand:hover{
-    letter-spacing: 5px;
+    padding: 4.5vh 4vw 4.5vh 4vw;
 }
 .nav-items{
     display: flex;
@@ -30,6 +20,8 @@
 	padding:10px 25px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
+    position: absolute;
+    z-index: 100;
 }
 .nav-button:hover {
 	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
@@ -64,14 +56,13 @@
 }
 .nav-link{
     text-decoration: none;
-    font-weight: bolder;
-    margin: 10px;
-    color: black;
+    font-weight: 500;
+    margin: 0 40px 0 40px;
+    color: rgb(68, 0, 62);
     transition: all .3s;
 }
 .nav-link:hover{
-    color: #FF7A00;
-    transform: translateX(10px);
+    color: #ff2be3;
 }
 
 .nav-list{
@@ -79,8 +70,12 @@
     text-decoration: none;
     list-style: none;
     align-items: center;
+    min-width: 100%;
     margin: 0;
     padding: 0;
+    width: 100%;
+    font-size: x-large;
+    font-weight: 300;
 }
 
 .menu-icon{
@@ -112,20 +107,22 @@
 
     .menu-icon{
         display: block;
-        color: black;
+        color: rgb(30, 0, 58);
         padding: 10px;
+        /* position: absolute;
+        z-index: 110; */
     }
     .nav-list{
         align-items: flex-start;
         display: flex;
         flex-direction: column;
-        background-image: linear-gradient(120deg,#73ff81 0%,#58f399 100%);
+        background-image: linear-gradient(120deg,#bb73ff 0%,#f358de 100%);
         position: absolute;
-        top: 70px;
+        top: 16vh;
         width: 100%;
         left: -120%;
         transition: all 0.3s ease-out;
-        z-index: 100;
+        z-index: 10;
     }
     .nav-list.active{
         left: 0;
@@ -142,8 +139,10 @@
         transition: all .3s;
     }
     .nav-link-mobile:hover{
-        color: #FF7A00;
-        transform: translateX(10px);
+        color: #f358de;
+    }
+    .nav-link:hover{
+        color: #ffffff;
     }
 
 }

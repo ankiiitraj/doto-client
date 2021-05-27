@@ -11,7 +11,7 @@ import Leaderboard from "./components/main/leaderboard/Leaderboard";
 import About from "./components/about/About";
 import Footer from "./components/footer/Footer";
 import {   NotificationManager, NotificationContainer } from "react-notifications";
-import Notify from "./components/Notify/Notify";
+// import Notify from "./components/Notify/Notify";
 
 function App() {
   const [user, setUserDetail] = useState({ name: window.localStorage.getItem('name') ||"user", email: window.localStorage.getItem('email') || "N/A" });
@@ -63,10 +63,17 @@ function App() {
   const signout = () => {
     setUserDetail({name: 'user', email: ''});
   } 
+  
+  function renderNav(){
+    if(user.name !== "user"){
+      return <Nav signout={signout} user={user} />
+    }
+  }
+
   return (
     <div className="App">
-      <Notify />
-      <Nav signout={signout} user={user} />
+      {/* <Notify /> */}
+      {renderNav()}
       <Switch>
         <ProtectedRoute
           exact
@@ -82,8 +89,10 @@ function App() {
         <Route exact path='/about' component={About} />
         <Route path="/" component={Error} />
       </Switch>
-      <Footer />
       <NotificationContainer />
+      <div style={{marginLeft:"auto",marginRight:"auto"}}>
+      <Footer />
+      </div>
     </div>
   );
 }

@@ -1,18 +1,24 @@
 .signin{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    min-height: 60vh;
+    min-height: 100vh;
 }
 .signin-about{
-    max-width: 700px;
+    max-width: 80vw;
     padding: 2em;
-    font-size: x-large;
+    font-size: 2.6rem;
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+    line-height: 130%;
+    opacity: .73;
+    color: rgb(30, 0, 58);
 }
 .signin-box{
-    max-width: 700px;
+    max-width: 80vw;
     padding: 2em;
     padding-top: 0;
     font-size: large;
@@ -21,17 +27,36 @@
     display: flex;
     align-items: center;
     width: max-content;
-    padding: .5rem;
+    padding: 1rem 1.5rem 1rem 1.5rem;
     background-color: white;
-    border-radius: 3px;
+    border-radius: 14px;
     box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
     transition-duration: .2s;
+    font-weight: 700;
+    color: rgb(61, 61, 61);
+    margin-bottom: 10vh;
 }
 .login-with-google:hover{
     box-shadow: 0 6px 8px 0 rgba(0,0,0,.25);
 }
 .logo-google{
-    margin-right: 10px;
+    margin-right: 18px;
     height: 20px;
     width: auto;
+}
+
+.logo-main{
+    max-width: 33rem;
+    margin-top: 10vh;
+}
+
+@media screen and (max-width: 550px ){
+    .signin-about{
+        font-size: 1.8rem;
+    }
+
+    .logo-main{
+        max-width: 25rem;
+    }
+
 }

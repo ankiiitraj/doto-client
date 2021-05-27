@@ -14,11 +14,11 @@
     flex-direction: row;
 }
 .footer-link{
-    text-decoration: underline;
     color: black;
     margin: 0px 10px;
     font-weight: bolder;
     transition: color .3s;
+    text-decoration: none;
 }
 .footer-link:hover{
     color: #219653;
@@ -33,4 +33,26 @@
     justify-content: center;
     flex-wrap: wrap;
     padding: 1em;   
+}
+
+.footer-div-small{
+    background-color: rgb(248, 176, 255);
+    color: rgba(0, 0, 0, 0.87);
+    padding: 0.2rem 0.5rem 0.3rem 1.3rem;
+    border-radius: 100px;
+    font-size: small;
+    font-weight: 600;
+}
+
+.footer-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 700px ){
+.made-with{
+    display:none;
+}
 }
