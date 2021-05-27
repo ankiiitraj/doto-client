@@ -21,7 +21,7 @@ const Footer = () => {
           </a>
           </div>
 
-          <div style={{marginTop:"20px", textAlign: "center" }}>
+          <div style={{marginTop:"20px", textAlign: "center" }} className={"made-with"}>
         <span>
           made with <span style={{ color: "#FF0000" }}>❤</span> by{" "}
           <a

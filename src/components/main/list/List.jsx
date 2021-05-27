@@ -157,8 +157,11 @@ const List = (props) => {
                               rel="noopener noreferrer"
                               target="_blank"
                               href={el.link}
+                              style={{textDecoration:"none"}}
                             >
+                              <b>
                               {el.name}
+                              </b>
                             </a>
                           </td>
                           <td style={{ display: "flex" }}>

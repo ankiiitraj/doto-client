@@ -41,10 +41,17 @@
     padding: 0.2rem 0.5rem 0.3rem 1.3rem;
     border-radius: 100px;
     font-size: small;
+    font-weight: 600;
 }
 
 .footer-wrapper{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+@media screen and (max-width: 700px ){
+.made-with{
+display:none;
+}
 }

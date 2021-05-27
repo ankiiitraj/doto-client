@@ -42,7 +42,7 @@ const Signin = (props) => {
         <h1>{message}</h1>
       </center>
       <div className="signin">
-        <img src={logo} style={{maxWidth:"33rem"}} alt="logo"/>
+        <img src={logo} style={{maxWidth:"33rem",marginTop:"10vh"}} alt="logo"/>
         <div className="signin-about">
           Hand picked problem lists for complete<br/> interview preparation. Start Solving <span alt={"dev emoji"} role={"img"} aria-label={"dev emoji"}>👨🏻‍💻</span>
         </div>
