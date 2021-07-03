@@ -3,11 +3,18 @@ import List from "./list/List";
 import { FcSettings } from "react-icons/fc";
 import Settings from "./settings/Settings";
 import "./main.css";
+import dataDSA from "../data/problems.json";
+import topicsDSA from "../data/topics.json";
+import dataCP from "../data/kartikCpProblems.json";
+import topicsCP from "../data/kartikCpTopics.json";
 
 const Main = (props) => {
   const [counter, updateCounter] = useState(0);
   const [settingsOpen, toggleSettings] = useState(false);
-
+  // eslint-disable-next-line
+  const [data, updateData] = useState(props.which === 'done' ? dataDSA : dataCP);
+  // eslint-disable-next-line
+  const [topics, updateTopics] = useState(props.which === 'done' ? topicsDSA : topicsCP);
   useEffect(() => {
     updateCounter(props.done.length);
     var d = document;
@@ -47,22 +54,14 @@ const Main = (props) => {
           >
             {props.message}
           </span>
+          <div style={{fontWeight: 600, color: "#44003ecc"}}>{(window.localStorage.getItem('which') || "done") === "done" ? "Love Babbar's Sheet" : "Kartik Arora's Sheet"}</div>
           <hr
-            style={{ background: "#96FF8D", height: "2px", border: "none" }}
+            style={{ background: "#fdf0ff", height: "5px", border: "none" }}
           />
           <div className="main-card">
             <div className="solved-count">
-              <div style={{ fontSize: "xxx-large", color: "#B2B2B2" }}>
-                <span style={{ color: "#FF7A00" }}>{counter}</span> / 448
-              </div>
-              <div
-                style={{
-                  fontSize: "x-large",
-                  color: "#767676",
-                  marginTop: "5px",
-                }}
-              >
-                Solved
+              <div style={{ fontSize: "xxx-large", color: "#B2B2B2", fontWeight: 600 }}>
+                <span style={{ color: "#FF00B888" }}>{counter}</span> / {data.length}
               </div>
             </div>
             <div
@@ -76,7 +75,10 @@ const Main = (props) => {
         </div>
         {settingsOpen === true && <Settings toggleSettings={toggleSettings} />}
         <List
+          which={props.which}
           done={props.done}
+          data={data}
+          topics={topics}
           updateCounter={updateCounter}
           dataArrived={props.dataArrived}
         />

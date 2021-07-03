@@ -3,15 +3,13 @@ import {
   NotificationContainer,
   NotificationManager,
 } from "react-notifications";
-import data from "../../data/problems.json";
-import topics from "../../data/topics.json";
-import { ReactComponent as Arrow } from "../../data/arrow.svg";
+// import { ReactComponent as Arrow } from "../../data/arrow.svg";
 import axios from "axios";
 import getTopicWiseCount from "../../util/topicFrequency";
 import "./list.css";
 
 const List = (props) => {
-  const { updateCounter } = props;
+  const { updateCounter, data, topics, which } = props;
   const [done, update] = useState(props.done || []);
   const [loading, updateLoading] = useState(Array(data.length).fill(0));
   const [locked, updateLock] = useState(1);
@@ -28,7 +26,7 @@ const List = (props) => {
       });
     }
     update([...props.done]);
-  }, [props.done, props.dataArrived]);
+  }, [props.done, props.dataArrived, data, topics]);
 
   const updateDone = (id, checked) => {
     updateLoading(
@@ -39,7 +37,7 @@ const List = (props) => {
     updateLock(1);
     axios
       .put(
-        `${process.env.REACT_APP_BASE_ENDPOINT || ""}/done`,
+        `${process.env.REACT_APP_BASE_ENDPOINT || ""}/${which}`,
         { id: id, ty: checked ? "add" : "del" },
         {
           headers: {
@@ -113,21 +111,22 @@ const List = (props) => {
                     color: "#B2B2B2",
                     fontSize: "x-large",
                     marginRight: "10px",
+                    fontWeight: 600
                   }}
                 >
-                  <span style={{ color: "#FF7A00" }}>
+                  <span style={{ color: "#FF00B888" }}>
                     {topicWiseCount[idx].done || 0}
                   </span>{" "}
                   / {topicWiseCount[idx].total || 0}
                 </span>
-                <Arrow
+                {/* <Arrow
                   style={{
                     transition: "visibility 1s",
                     transform: collapsed[idx] ? "scaleY(-1)" : "",
                   }}
                   height={30}
                   width={30}
-                />
+                /> */}
               </div>
             </div>
             <div
@@ -143,6 +142,7 @@ const List = (props) => {
                   <tr>
                     <th>#</th>
                     <th>Name</th>
+                    {data[0]?.rated && <th>Rating</th>}
                     <th>Status</th>
                   </tr>
                 </thead>
@@ -164,6 +164,7 @@ const List = (props) => {
                               </b>
                             </a>
                           </td>
+                          {el?.rated && <td>{el.rated}</td>}
                           <td style={{ display: "flex" }}>
                             <input
                               disabled={locked}
