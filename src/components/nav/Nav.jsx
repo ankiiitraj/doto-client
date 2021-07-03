@@ -32,9 +32,6 @@ const Nav = (props) => {
             <Link className="nav-link" to="/about" onClick={handleOpen}>
               <li>about</li>
             </Link>
-            <Link className="nav-link" to="/leaderboard" onClick={handleOpen}>
-              <li>leaderboard</li>
-            </Link>
             <Link className="nav-link" to="/lists" onClick={handleOpen}>
               <li>change list</li>
             </Link>

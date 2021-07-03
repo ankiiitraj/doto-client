@@ -7,10 +7,10 @@ import Nav from "./components/nav/Nav";
 import Main from "./components/main/Main";
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import "./react-notification.css"
-import Leaderboard from "./components/main/leaderboard/Leaderboard";
 import About from "./components/about/About";
 import Footer from "./components/footer/Footer";
 import {   NotificationManager, NotificationContainer } from "react-notifications";
+import Lists from "./components/lists/lists";
 // import Notify from "./components/Notify/Notify";
 
 function App() {
@@ -18,7 +18,13 @@ function App() {
   const [done, setDone] = useState([]);
   const [dataArrived, updateArrival] = useState(false);
   const [message, updateMessage] = useState(`Loading Data . . . 🚶‍♂️`);
+  const [which, updateWhich] = useState(window.localStorage.getItem('which') || "done");
   const history = useHistory();
+
+  const handleWhichUpdate = (which) =>{
+    window.localStorage.setItem("which", which);
+    updateWhich(which);
+  }
 
   const signin = (success) => {
     if (success) {
@@ -30,6 +36,7 @@ function App() {
       history.push("/error");
     }
   };
+  
   const fetchDone = () => {
     axios
       .get(`${process.env.REACT_APP_BASE_ENDPOINT || ''}/done`, {
@@ -38,7 +45,7 @@ function App() {
         }
       })
       .then((result) => {
-        setDone([...result.data.result.done]);
+        setDone(which === 'done' ? [...result.data.result.done] : [...result.data.result.doneKartikCP]);
         updateMessage('👨🏼‍💻');
         updateArrival(true);
       })
@@ -58,6 +65,7 @@ function App() {
       updateMessage(`Loading Data . . . 🚶‍♂️`);
       updateArrival(false);
     }
+  // eslint-disable-next-line
   }, [location])
 
   const signout = () => {
@@ -82,11 +90,12 @@ function App() {
           done={done}
           message={message}
           dataArrived={dataArrived}
+          which={which}
           path="/"
           component={Main}
         />
-        <Route exact path='/leaderboard'> <Leaderboard username={user.name !== "user" ? user.email.split('@')[0] : ""} /> </Route>
         <Route exact path='/about' component={About} />
+        <Route exact path='/lists'><Lists updateWhich={handleWhichUpdate} which={which} /></Route>
         <Route path="/" component={Error} />
       </Switch>
       <NotificationContainer />

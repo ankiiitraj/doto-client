@@ -122,9 +122,6 @@ const Settings = (props) => {
                   {userSettings.buttonName}
                 </button> */}
               </div>
-              <span style={{ fontSize: "small", color: "#ff0000" }}>
-                *Feature for changing username is coming soon
-              </span>
             </>
           )}
         </div>

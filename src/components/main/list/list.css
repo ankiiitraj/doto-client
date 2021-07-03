@@ -19,14 +19,17 @@ body{
 	justify-content: space-between;
 	align-items: center;
 	background-color: #FFF;
-	padding: 15px;
+	padding: 15px 25px;
 	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
 	cursor: pointer;
 }
 .heading-h1{
 	margin: 0;
-	padding: 0;
+	padding: 10px;
+	font-weight: 700;
+	font-size: x-large;
+	color: #44003ead;
 }
 .table-wrapper{
 	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -41,7 +44,7 @@ body{
 	overflow: hidden;
 }
 .table-items thead tr {
-    background-color: #78cc71;
+    background-color: #845780f0;
     color: #ffffff;
     text-align: left;
 }
