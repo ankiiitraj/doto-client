@@ -8,8 +8,7 @@ const About = () => {
       style={{
         width: "100vw",
         height: "max-content",
-        minHeight: "100vh",
-        backgroundColor: "rgb(0, 0, 0, 0.6)",
+        minHeight: "100vh"
       }}
     >
       <div className="about-wrapper">
@@ -84,7 +83,7 @@ const About = () => {
                 }}
               ></div>
               <h1>Ankit Raj</h1>
-              <span>Owner {"&"} Fullstack</span>
+              <span>creator {"&"} open sorcerer</span>
               <div className="individual-social">
                 <a
                   rel="noopener noreferrer"

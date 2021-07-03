@@ -10,7 +10,7 @@
     color: #BA95D8;
 }
 .future{
-    color: #E3E9A7;
+    color: #adbb1f;
 }
 .emoji{
     font-size: xx-large;
@@ -42,8 +42,8 @@
     padding: 0;
 }
 .individual-img{
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     border-radius: 200px;
     background-size: cover;
     background-position: center;
