@@ -11,7 +11,6 @@ import About from "./components/about/About";
 import Footer from "./components/footer/Footer";
 import {   NotificationManager, NotificationContainer } from "react-notifications";
 import Lists from "./components/lists/lists";
-// import Notify from "./components/Notify/Notify";
 
 function App() {
   const [user, setUserDetail] = useState({ name: window.localStorage.getItem('name') ||"user", email: window.localStorage.getItem('email') || "N/A" });
@@ -80,7 +79,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Notify /> */}
+      <div className="main">
       {renderNav()}
       <Switch>
         <ProtectedRoute
@@ -99,9 +98,8 @@ function App() {
         <Route path="/" component={Error} />
       </Switch>
       <NotificationContainer />
-      <div style={{marginLeft:"auto",marginRight:"auto"}}>
+</div>
       <Footer />
-      </div>
     </div>
   );
 }
