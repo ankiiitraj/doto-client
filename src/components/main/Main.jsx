@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import List from "./list/List";
-import { FcSettings } from "react-icons/fc";
+// import { FcSettings } from "react-icons/fc";
 import Settings from "./settings/Settings";
 import "./main.css";
 import dataDSA from "../data/problems.json";
