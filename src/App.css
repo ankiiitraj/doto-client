@@ -1,4 +1,7 @@
 body{
     background-color: #fdf0ff;
+}
+
+.main{
     min-height: 100vh;
 }
