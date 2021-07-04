@@ -42,7 +42,7 @@ const Main = (props) => {
           data-color="#528FF0"
           data-size="medium"
         ></div>
-        <div className="user-detail">
+        <div className="user-detail" style={{paddingBottom:"40px", paddingTop:"30px"}}>
           <span
             style={{
               fontSize: "xx-large",
@@ -54,23 +54,21 @@ const Main = (props) => {
           >
             {props.message}
           </span>
-          <div style={{fontWeight: 600, color: "#44003ecc"}}>{(window.localStorage.getItem('which') || "done") === "done" ? "Love Babbar's Sheet" : "Kartik Arora's Sheet"}</div>
-          <hr
-            style={{ background: "#fdf0ff", height: "5px", border: "none" }}
-          />
+          <div style={{fontWeight: 600, color: "#44003ecc", paddingBottom:"20px"}}>{(window.localStorage.getItem('which') || "done") === "done" ? "Love Babbar's Sheet" : "Kartik Arora's Sheet"}</div>
+          
           <div className="main-card">
             <div className="solved-count">
               <div style={{ fontSize: "xxx-large", color: "#B2B2B2", fontWeight: 600 }}>
                 <span style={{ color: "#FF00B888" }}>{counter}</span> / {data.length}
               </div>
             </div>
-            <div
+            {/* <div
               onClick={() => {
                 toggleSettings(!settingsOpen);
               }}
             >
               <FcSettings className={settingsOpen ? "rotated" : ""} />
-            </div>
+            </div> */}
           </div>
         </div>
         {settingsOpen === true && <Settings toggleSettings={toggleSettings} />}

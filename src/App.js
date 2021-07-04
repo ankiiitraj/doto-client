@@ -16,7 +16,7 @@ function App() {
   const [user, setUserDetail] = useState({ name: window.localStorage.getItem('name') ||"user", email: window.localStorage.getItem('email') || "N/A" });
   const [done, setDone] = useState([]);
   const [dataArrived, updateArrival] = useState(false);
-  const [message, updateMessage] = useState(`Loading Data . . . 🚶‍♂️`);
+  const [message, updateMessage] = useState(`🟣 🟣 🟣`);
   const [which, updateWhich] = useState(window.localStorage.getItem('which') || "done");
   const history = useHistory();
 
@@ -61,7 +61,7 @@ function App() {
       fetchDone();
     }else if(window.localStorage.getItem('token') && location.pathname !== "/"){
       setDone([]);
-      updateMessage(`Loading Data . . . 🚶‍♂️`);
+      updateMessage(`🟣 🟣 🟣`);
       updateArrival(false);
     }
   // eslint-disable-next-line
