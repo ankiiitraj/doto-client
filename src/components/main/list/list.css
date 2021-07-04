@@ -18,10 +18,10 @@ body{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #FFF;
 	padding: 15px 25px;
-	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 10px;
+	border-radius: 20px;
+	background: #ffffff;
+	box-shadow: 10px 10px 40px #ddb2e4, -10px -10px 40px #ffffff;
 	cursor: pointer;
 }
 .heading-h1{
@@ -32,8 +32,9 @@ body{
 	color: #44003ead;
 }
 .table-wrapper{
-	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 10px;
+	border-radius: 20px;
+	background: #ffffff;
+	box-shadow: 10px 10px 40px #ddb2e4, -10px -10px 40px #ffffff;
 }
 .table-items{
     border-collapse: collapse;
@@ -51,9 +52,6 @@ body{
 .table-items th,
 .table-items td {
     padding: 12px 15px;
-}
-.table-items tbody tr {
-    border-bottom: 1px solid #dddddd;
 }
 
 .table-items tbody tr:nth-of-type(even) {
@@ -81,7 +79,7 @@ label {
 	text-indent: -9999px;
 	width: 40px;
 	height: 20px;
-	background: #f55331;
+	background: #97759b;
 	display: block;
 	border-radius: 100px;
 	position: relative;
@@ -100,7 +98,7 @@ label:after {
 }
 
 input:checked + label {
-	background: #89cfbf;
+	background: #55d8b9;
 }
 
 input:checked + label:after {
