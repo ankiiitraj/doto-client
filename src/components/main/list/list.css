@@ -105,7 +105,7 @@ label {
 	inset -4px -4px 6px 0 rgba(255,255,255,.2),
 	inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
  height: 26px;
- width: 70px;
+ width: 60px;
  margin-left: 15px;
 }
 
@@ -134,11 +134,11 @@ label {
 
 input[type=checkbox]:checked ~ .switch .button {
 	position: absolute;
-	left: 48px;
+	left: 38px;
 }
 
 input[type=checkbox]:checked ~ .switch {
-	background: linear-gradient(0deg, rgba(251,33,117,1) 0%, rgba(234,76,137,1) 100%);
+	background: linear-gradient(0deg, rgb(33, 251, 160) 0%, rgb(76, 234, 160) 100%);
 
 }
 
