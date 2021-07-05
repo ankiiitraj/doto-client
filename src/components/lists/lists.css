@@ -8,7 +8,13 @@
   background-color: #FFF;
   font-size: xx-large;
   padding: 35px;
+  transition-duration: 0.3s;
 }
+.lists-card:hover{
+  background: #ffffff;
+  box-shadow: none;
+}
+
 .lists-header{
   display: flex;
   justify-content: space-between;
