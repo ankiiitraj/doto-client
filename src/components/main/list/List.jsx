@@ -138,21 +138,21 @@ const List = (props) => {
               }}
             >
               <table className="table-items">
-                <thead>
+                {/* <thead>
                   <tr>
-                    <th>#</th>
+                    <th style={{paddingBottom:"25px",paddingTop:"25px",paddingLeft:"25px"}}>#</th>
                     <th>Name</th>
                     {data[0]?.rated && <th>Rating</th>}
                     <th>Status</th>
                   </tr>
-                </thead>
+                </thead> */}
                 <tbody>
                   {data.map((el, id) => {
                     return (
                       el.topic === elem && (
-                        <tr key={`${id}`}>
-                          <td>{id}</td>
-                          <td>
+                        <tr key={`${id}`} >
+                          <td style={{paddingBottom:"25px",paddingTop:"25px",paddingLeft:"35px"}}><b>{id}</b></td>
+                          <td style={{paddingBottom:"25px",paddingTop:"25px"}}>
                             <a
                               rel="noopener noreferrer"
                               target="_blank"
@@ -164,8 +164,8 @@ const List = (props) => {
                               </b>
                             </a>
                           </td>
-                          {el?.rated && <td>{el.rated}</td>}
-                          <td style={{ display: "flex" }}>
+                          {el?.rated && <td><b>{el.rated}</b></td>}
+                          <td style={{ display: "flex",paddingBottom:"25px",paddingTop:"25px",paddingRight:"35px"}}>
                             <input
                               disabled={locked}
                               checked={done.indexOf(id) === -1 ? false : true}
@@ -175,12 +175,15 @@ const List = (props) => {
                               type="checkbox"
                               id={`switch${id}`}
                             />
-                            <label
+
+
+                            <label for= {"toggle"} className = {"switch"}
                               style={{ background: locked ? "#b5b0b0" : "" }}
                               htmlFor={`switch${id}`}
                             >
-                              Toggle
+                              <div class="button"></div>
                             </label>
+    
                             <div
                               className="spinner"
                               style={{

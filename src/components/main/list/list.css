@@ -23,6 +23,11 @@ body{
 	background: #ffffff;
 	box-shadow: 10px 10px 40px #ddb2e4, -10px -10px 40px #ffffff;
 	cursor: pointer;
+	transition-duration: 0.3s;
+}
+.heading:hover{
+	background: #ffffff;
+	box-shadow: none;
 }
 .heading-h1{
 	margin: 0;
@@ -35,13 +40,14 @@ body{
 	border-radius: 20px;
 	background: #ffffff;
 	box-shadow: 10px 10px 40px #ddb2e4, -10px -10px 40px #ffffff;
+
 }
 .table-items{
     border-collapse: collapse;
     margin: 25px 0;
-    font-size: 0.9em;
+    font-size: 1.13em;
 	width: 100%;
-	border-radius: 10px;
+	border-radius: 20px;
 	overflow: hidden;
 }
 .table-items thead tr {
@@ -55,10 +61,10 @@ body{
 }
 
 .table-items tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #fffffff0;
 }
 .table-items tbody tr:nth-of-type(odd) {
-    background-color: #fffafa;
+    background-color: #fdf7ff;
 }
 .table-items tbody tr:last-of-type {
 	border-bottom: none;
@@ -67,55 +73,73 @@ body{
 
 
 
-/*Toggler*/
-input[type=checkbox]{
-	height: 0;
-	width: 0;
+
+input[type=checkbox] {
+	position: absolute;
 	visibility: hidden;
 }
 
+input#toggle[type=checkbox]{
+	 display:none;
+}
+
+
 label {
-	cursor: pointer;
-	text-indent: -9999px;
-	width: 40px;
-	height: 20px;
-	background: #97759b;
-	display: block;
-	border-radius: 100px;
-	position: relative;
-}
-
-label:after {
-	content: '';
 	position: absolute;
-	top: 1px;
-	left: 1px;
-	width: 18px;
-	height: 18px;
-	background: #fff;
-	border-radius: 90px;
-	transition: 0.3s;
+	height: 40px;
+	width: 120px;
+	display: block; 
+	top: 0px; bottom: 0; right: 0; left:0;
+	z-index: 9999;
+	cursor: pointer;
+	margin: 0 auto;
 }
 
-input:checked + label {
-	background: #55d8b9;
+.switch {
+ display: block; 
+ position: relative;
+ border-radius: 25px;
+ background: #f1e7f5;
+ box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+				 -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+	inset -4px -4px 6px 0 rgba(255,255,255,.2),
+	inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+ height: 26px;
+ width: 60px;
+ margin-left: 15px;
 }
 
-input:checked + label:after {
-	left: calc(100% - 1px);
-	transform: translateX(-100%);
+.switch .button{
+ display: block; 
+ position: absolute;
+ border-radius: 100%;
+ background: #eff2f5;
+ box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+ height: 18px; 
+ width: 18px;
+ top: 3.5px;
+ left: 3.5px;
 }
 
-/* input:default + label {
-	background: #89cfbf;
-}
-input[type="checkbox"]:default + label:after {
-    left: calc(100% - 1px);
-	transform: translateX(-100%);
-} */
 
-label:active:after {
-	width: 13px;
+
+/* TOGGLE */
+
+.switch .button {
+	transition: left .25s ease-in-out;
+	-webkit-transition: left .25s ease-in-out;
+}
+
+input[type=checkbox]:checked ~ .switch .button {
+	position: absolute;
+	left: 38px;
+}
+
+input[type=checkbox]:checked ~ .switch {
+	background: linear-gradient(0deg, rgb(33, 251, 160) 0%, rgb(76, 234, 160) 100%);
+
 }
 
 
@@ -130,7 +154,7 @@ label:active:after {
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
-	background-color: #89cfbf;
+	background-color: #be83e0;
 	opacity: 0.6;
 	position: absolute;
 	top: 0;
