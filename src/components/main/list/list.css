@@ -75,7 +75,7 @@ body{
 
 
 input[type=checkbox] {
-	position: absolute;
+	/* position: absolute; */
 	visibility: hidden;
 }
 
