@@ -55,6 +55,11 @@
 .individual-social a{
     margin: 5px;
 }
-.individual-social a:hover{
-    color: #ee2a7b !important;
+.individual-social-linkedin:hover{
+    color: #0a66c2 !important;
+    transition-duration: 0.3s;
+}
+.individual-social-github:hover{
+    color: #24292e !important;
+    transition-duration: 0.3s;
 }

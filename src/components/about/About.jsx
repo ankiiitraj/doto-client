@@ -79,28 +79,65 @@ const About = () => {
               <div
                 className="individual-img"
                 style={{
-                  backgroundImage: "url(./ankit.jpeg)",
+                  backgroundImage: "url(https://avatars.githubusercontent.com/u/48787278?v=4)",
                 }}
               ></div>
-              <h1>Ankit Raj</h1>
+              <h1 style={{fontSize:"x-large"}}>Ankit Raj</h1>
               <span>creator {"&"} open sorcerer</span>
               <div className="individual-social">
                 <a
+                  className="individual-social-github"
                   rel="noopener noreferrer"
                   target="_blank"
 									href="https://github.com/ankiiitraj"
 									style={{
-										color: "#24292e"
+                    color: "#a0979b"
 									}}
                 >
                   <SiGithub />
                 </a>
                 <a
+                  className="individual-social-linkedin"
                   rel="noopener noreferrer"
                   target="_blank"
 									href="https://linkedin.com/in/ankiiitraj"
 									style={{
-										color: "#0a66c2"
+                    color: "#a0979b"
+									}}
+                >
+                  <SiLinkedin />
+                </a>
+              </div>
+            </div>
+
+            <div className="individual">
+              <div
+                className="individual-img"
+                style={{
+                  backgroundImage: "url(https://avatars.githubusercontent.com/u/29145212?v=4)",
+                }}
+              ></div>
+              <h1 style={{fontSize:"x-large"}}>Vishal Pratap Singh</h1>
+              <span>fullstack developer</span>
+              <div className="individual-social">
+                <a
+                  className="individual-social-github"
+                  rel="noopener noreferrer"
+                  target="_blank"
+									href="https://github.com/Vishal19111999"
+									style={{
+										color: "#a0979b"
+									}}
+                >
+                  <SiGithub />
+                </a>
+                <a
+                  className="individual-social-linkedin"
+                  rel="noopener noreferrer"
+                  target="_blank"
+									href="https://linkedin.com/in/Vishal19111999"
+									style={{
+										color: "#a0979b"
 									}}
                 >
                   <SiLinkedin />
