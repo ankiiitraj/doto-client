@@ -9,7 +9,7 @@ by none other than **Love Babbar**.
 Check out the video where Love Babbar talks about these questions.
 [Link](https://www.youtube.com/watch?v=4iFALQ1ACdA)
 
-http://dotodsa.netlify.com  -- Checkout the application
+http://doto.codes  -- Checkout the application
 
 ## Authors
 
