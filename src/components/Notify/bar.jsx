@@ -29,6 +29,7 @@ export default function NotifyTopBar() {
           className="top-bar-link" 
           style={{ color: "#4ceaa0", fontWeight: "bolder", fontSize: "x-large" }} 
           href="https://www.doto.co.in" 
+          rel="noopener noreferrer"
           target="_blank">
           doto.co.in
         </a>
