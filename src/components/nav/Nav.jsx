@@ -36,7 +36,7 @@ const Nav = (props) => {
               <li>change list</li>
             </Link>
             <Link className="nav-link nav-donate" to={{pathname: "https://pages.razorpay.com/pl_G1Yg5MfSMvwqxs/view"}} target="_blank">
-              buy me <span style={{ fontSize: "x-large" }}>☕</span>
+              buy me <span aria-label="coffee" role="img" style={{ fontSize: "x-large" }}>☕</span>
             </Link>
             <Link
               className={!token ? "hidden" : "nav-link-mobile hidden"}
