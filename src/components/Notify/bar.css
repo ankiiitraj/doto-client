@@ -1,0 +1,11 @@
+.top-bar-link:hover {
+  color: #f8b0ff !important;
+}
+
+.razorpay-button {
+  margin: auto 1px;
+  border-radius: 10px;
+  background-color: rgb(240, 240, 145);
+  padding: auto;
+  
+}
