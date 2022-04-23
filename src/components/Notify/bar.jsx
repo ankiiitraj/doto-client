@@ -25,7 +25,11 @@ export default function NotifyTopBar() {
         doto is moving to a new address.
       </span><br/>
       <span>
-        <a className="top-bar-link" style={{ color: "#4ceaa0", fontWeight: "bolder", fontSize: "x-large" }} href="https://doto.co.in">
+        <a 
+          className="top-bar-link" 
+          style={{ color: "#4ceaa0", fontWeight: "bolder", fontSize: "x-large" }} 
+          href="https://www.doto.co.in" 
+          target="_blank">
           doto.co.in
         </a>
       </span>
