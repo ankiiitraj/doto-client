@@ -11,7 +11,6 @@ import About from "./components/about/About";
 import Footer from "./components/footer/Footer";
 import {   NotificationManager, NotificationContainer } from "react-notifications";
 import Lists from "./components/lists/lists";
-// import NotifyTopBar from "./components/Notify/bar";
 
 function App() {
   const [user, setUserDetail] = useState({ name: window.localStorage.getItem('name') ||"user", email: window.localStorage.getItem('email') || "N/A" });
@@ -81,7 +80,6 @@ function App() {
   return (
     <div className="App">
       <div className="main">
-//         <NotifyTopBar />
         {renderNav()}
         <Switch>
           <ProtectedRoute
