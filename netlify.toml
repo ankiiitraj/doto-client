@@ -1,6 +1,6 @@
 [[redirects]]
 from = "/api/*"
-to = "https://dotoserver.herokuapp.com/:splat"
+to = "https://doto-server-production.up.railway.app/:splat"
 status = 200
 force = true
 
