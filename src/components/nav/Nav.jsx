@@ -56,12 +56,11 @@ const Nav = (props) => {
             className="avatar mobile"
             disabled={token ? false : true}
             onClick={() => {
-              if (token) {
                 handleClick(!disabled);
-              }
             }}
             style={{
               backgroundColor: "#78cc71",
+              cursor: "pointer",
               backgroundImage: `url(${
                 window.localStorage.getItem("url") || "./profile.png"
               })`,
