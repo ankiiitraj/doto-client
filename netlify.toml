@@ -1,6 +1,12 @@
 [[redirects]]
-from = "/api/*"
+from = "/v1/api/*"
 to = "https://doto-server-production.up.railway.app/:splat"
+status = 200
+force = true
+
+[[redirects]]
+from = "/v2/api/*"
+to = "https://doto-server.up.railway.app/:splat"
 status = 200
 force = true
 
