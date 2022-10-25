@@ -13,6 +13,7 @@ body{
     min-width: 320px;
 	max-width: 700px;
 	margin: 2em auto;
+	
 }
 .heading{
 	display: flex;
@@ -40,16 +41,18 @@ body{
 	border-radius: 20px;
 	background: #ffffff;
 	box-shadow: 10px 10px 40px #ddb2e4, -10px -10px 40px #ffffff;
-
 }
+
 .table-items{
     border-collapse: collapse;
     margin: 25px 0;
+	margin-bottom: 0px;
     font-size: 1.13em;
 	width: 100%;
 	border-radius: 20px;
-	overflow: hidden;
+	overflow: scroll;
 }
+
 .table-items thead tr {
     background-color: #845780f0;
     color: #ffffff;
@@ -71,8 +74,30 @@ body{
 }
 
 
+#selected-topic {
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 0px;
+	z-index: 600;
+	min-width: 320px;
+	max-width: 700px;
+}
 
+#selected-topic .topic-items__wrapper {
+	max-height: 70vh;
+	overflow: scroll;
+	margin-top: 1rem;
+	border: 1px solid #727272;
+}
 
+#selected-topic__heading {
+	border: 1px solid #7272726d;
+}
+
+#selected-topic .table-items{
+    margin-top: 0px;
+}
 
 input[type=checkbox] {
 	/* position: absolute; */
@@ -107,6 +132,7 @@ label {
  height: 26px;
  width: 60px;
  margin-left: 15px;
+ z-index: 1;
 }
 
 .switch .button{

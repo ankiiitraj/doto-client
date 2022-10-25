@@ -85,15 +85,22 @@ const List = (props) => {
     updateCollapsed([...temp]);
   };
 
+  const [selectedTopic, setTopicAsSelected] = useState(null)
+
   return (
     <div className="list">
       {topics.map((elem, idx) => {
+     
         return (
-          <div className="topic" key={`${idx}`}>
+          <div className="topic" key={`${idx}`}
+          id={idx===selectedTopic ? 'selected-topic' : ''}
+          >
             <div
               className="heading"
+              id={idx===selectedTopic ? 'selected-topic__heading' : ''}
               onClick={() => {
                 handleCollapse(idx);
+                collapsed[idx] === true ? setTopicAsSelected(null) : setTopicAsSelected(idx)
               }}
             >
               <div>
@@ -129,10 +136,13 @@ const List = (props) => {
                 /> */}
               </div>
             </div>
+          <div className="topic-items__wrapper" style={{
+            border: collapsed[idx] ? "none" : "1px solid #727272",
+          }}>
             <div
               className="table-wrapper"
               style={{
-                transition: "height 1s",
+                transition: "height 2s",
                 height: collapsed[idx] ? "0px" : "initial",
                 overflow: collapsed[idx] ? "hidden" : "initial",
               }}
@@ -202,6 +212,7 @@ const List = (props) => {
                   })}
                 </tbody>
               </table>
+            </div>
             </div>
           </div>
         );
