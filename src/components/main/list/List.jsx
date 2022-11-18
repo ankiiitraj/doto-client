@@ -77,23 +77,7 @@ const List = (props) => {
         updateLock(0);
         NotificationManager.warning("Error 😵");
       });
-    };
-  const [selectedTopic, setTopicAsSelected] = useState(null)
-
-  const handleStickyTopic = async (idx) => {
-    // make topic sticky if it isn't already
-    if (idx !== selectedTopic) {
-      handleCollapse(idx)
-      handleCollapse(selectedTopic) // un-stick previously stickied topic
-      setTopicAsSelected(idx)
-    }
-
-    // un-stick topic if it is presently sticky
-    if (idx === selectedTopic){
-      handleCollapse(idx)
-      setTopicAsSelected(null)
-    }
-  }
+  };
 
   const handleCollapse = (idx) => {
     const temp = collapsed;
@@ -101,19 +85,7 @@ const List = (props) => {
     updateCollapsed([...temp]);
   };
 
-  useEffect(()=>{
-    const x = e => {
-      if(e.target.className !== "heading" && e.target.className !== "heading-h1") {
-        setTopicAsSelected(null)
-        updateCollapsed([...Array(collapsed.length).fill(true)])
-      }
-    }
-
-    document.addEventListener('click', x)
-    return () => {
-      document.removeEventListener('click', x)
-    }
-  }, [collapsed, selectedTopic])
+  const [selectedTopic, setTopicAsSelected] = useState(null)
 
   return (
     <div className="list">
@@ -127,7 +99,8 @@ const List = (props) => {
               className="heading"
               id={idx===selectedTopic ? 'selected-topic__heading' : ''}
               onClick={() => {
-                handleStickyTopic(idx)
+                handleCollapse(idx);
+                collapsed[idx] === true ? setTopicAsSelected(null) : setTopicAsSelected(idx)
               }}
             >
               <div>
@@ -163,7 +136,9 @@ const List = (props) => {
                 /> */}
               </div>
             </div>
-          <div className="topic-items__wrapper">
+          <div className="topic-items__wrapper" style={{
+            border: collapsed[idx] ? "none" : "1px solid #727272",
+          }}>
             <div
               className="table-wrapper"
               style={{
@@ -216,7 +191,7 @@ const List = (props) => {
                               style={{ background: locked ? "#b5b0b0" : "" }}
                               htmlFor={`switch${id}`}
                             >
-                              <div className="button"></div>
+                              <div class="button"></div>
                             </label>
     
                             <div
