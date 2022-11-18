@@ -6,7 +6,7 @@ force = true
 
 [[redirects]]
 from = "/v2/api/*"
-to = "https://doto-server.up.railway.app/:splat"
+to = "https://doto.cyclic.app/:splat"
 status = 200
 force = true
 
